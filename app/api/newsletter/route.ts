@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { newsletterSchema, subscribeToNewsletter } from "@/lib/newsletter/provider";
+import { NewsletterProviderError, newsletterSchema, subscribeToNewsletter } from "@/lib/newsletter/provider";
 
 export async function POST(request: Request) {
   try {
@@ -16,7 +16,16 @@ export async function POST(request: Request) {
       provider: result.provider,
       duplicate: result.duplicate || false
     });
-  } catch {
+  } catch (error) {
+    if (error instanceof NewsletterProviderError) {
+      console.error("Newsletter provider failed", {
+        message: error.message,
+        details: error.details
+      });
+    } else {
+      console.error("Newsletter subscription failed", error);
+    }
+
     return NextResponse.json({ message: "Subscription failed. Please try again later." }, { status: 502 });
   }
 }

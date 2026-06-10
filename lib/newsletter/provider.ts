@@ -13,6 +13,16 @@ type NewsletterResult = {
   duplicate?: boolean;
 };
 
+export class NewsletterProviderError extends Error {
+  constructor(
+    message: string,
+    public details?: Record<string, unknown>
+  ) {
+    super(message);
+    this.name = "NewsletterProviderError";
+  }
+}
+
 const googleSheetsResponseSchema = z
   .object({
     ok: z.boolean().optional(),
@@ -42,13 +52,32 @@ export async function subscribeToNewsletter(input: NewsletterInput) {
     });
 
     if (!response.ok) {
-      throw new Error("Google Sheets subscription failed");
+      throw new NewsletterProviderError("Google Sheets webhook returned a non-OK response", {
+        status: response.status,
+        statusText: response.statusText
+      });
     }
 
-    const result = googleSheetsResponseSchema.parse(await response.json());
+    const responseText = await response.text();
+    let responseJson: unknown;
+
+    try {
+      responseJson = JSON.parse(responseText);
+    } catch {
+      throw new NewsletterProviderError("Google Sheets webhook did not return JSON", {
+        status: response.status,
+        contentType: response.headers.get("content-type"),
+        responsePreview: responseText.slice(0, 180)
+      });
+    }
+
+    const result = googleSheetsResponseSchema.parse(responseJson);
 
     if (result.ok === false) {
-      throw new Error(result.message || "Google Sheets subscription failed");
+      throw new NewsletterProviderError(result.message || "Google Sheets subscription failed", {
+        status: result.status,
+        duplicate: result.duplicate
+      });
     }
 
     return {
