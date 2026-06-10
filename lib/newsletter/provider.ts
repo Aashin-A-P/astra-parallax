@@ -1,4 +1,5 @@
 import { z } from "zod";
+import nodemailer from "nodemailer";
 
 export const newsletterSchema = z.object({
   email: z.string().email(),
@@ -8,7 +9,7 @@ export const newsletterSchema = z.object({
 export type NewsletterInput = z.infer<typeof newsletterSchema>;
 
 type NewsletterResult = {
-  provider: "supabase" | "google-sheets" | "brevo" | "mailchimp-placeholder" | "mock";
+  provider: "smtp" | "supabase" | "google-sheets" | "brevo" | "mailchimp-placeholder" | "mock";
   ok: true;
   duplicate?: boolean;
 };
@@ -45,6 +46,45 @@ export async function subscribeToNewsletter(input: NewsletterInput) {
   const parsed = newsletterSchema.parse(input);
   const email = parsed.email.trim().toLowerCase();
   const name = parsed.name?.trim();
+
+  if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
+    const port = Number(process.env.SMTP_PORT || 465);
+    const from = process.env.NEWSLETTER_NOTIFY_FROM || process.env.SMTP_USER;
+    const to = process.env.NEWSLETTER_NOTIFY_TO || "aarushdestroyer@gmail.com";
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port,
+      secure: port === 465,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
+      }
+    });
+
+    await transporter.sendMail({
+      from: `"Astra Parallax Dispatch" <${from}>`,
+      to,
+      replyTo: email,
+      subject: "New Astra Parallax Dispatch signup",
+      text: [
+        "New Dispatch signup",
+        "",
+        `Email: ${email}`,
+        `Name: ${name || "Not provided"}`,
+        "Source: dispatch",
+        `Created At: ${new Date().toISOString()}`
+      ].join("\n"),
+      html: `
+        <h2>New Dispatch signup</h2>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Name:</strong> ${name || "Not provided"}</p>
+        <p><strong>Source:</strong> dispatch</p>
+        <p><strong>Created At:</strong> ${new Date().toISOString()}</p>
+      `
+    });
+
+    return { provider: "smtp", ok: true } satisfies NewsletterResult;
+  }
 
   if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
     const baseUrl = process.env.SUPABASE_URL.replace(/\/$/, "");

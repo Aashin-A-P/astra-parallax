@@ -117,6 +117,17 @@ Set `NEXT_PUBLIC_GA_ID` to enable Google Analytics. Set `GOOGLE_SITE_VERIFICATIO
 
 The newsletter API is `app/api/newsletter/route.ts`. It validates with Zod and uses `lib/newsletter/provider.ts`.
 
+SMTP email notifications:
+
+```env
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=apaashin@gmail.com
+SMTP_PASS=
+NEWSLETTER_NOTIFY_FROM=apaashin@gmail.com
+NEWSLETTER_NOTIFY_TO=aarushdestroyer@gmail.com
+```
+
 Supabase subscribers table:
 
 ```env
