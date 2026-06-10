@@ -8,7 +8,7 @@ export const newsletterSchema = z.object({
 export type NewsletterInput = z.infer<typeof newsletterSchema>;
 
 type NewsletterResult = {
-  provider: "google-sheets" | "brevo" | "mailchimp-placeholder" | "mock";
+  provider: "supabase" | "google-sheets" | "brevo" | "mailchimp-placeholder" | "mock";
   ok: true;
   duplicate?: boolean;
 };
@@ -32,10 +32,62 @@ const googleSheetsResponseSchema = z
   })
   .passthrough();
 
+const supabaseErrorSchema = z
+  .object({
+    code: z.string().optional(),
+    message: z.string().optional(),
+    details: z.string().optional(),
+    hint: z.string().optional()
+  })
+  .passthrough();
+
 export async function subscribeToNewsletter(input: NewsletterInput) {
   const parsed = newsletterSchema.parse(input);
   const email = parsed.email.trim().toLowerCase();
   const name = parsed.name?.trim();
+
+  if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    const baseUrl = process.env.SUPABASE_URL.replace(/\/$/, "");
+    const response = await fetch(`${baseUrl}/rest/v1/dispatch_subscribers`, {
+      method: "POST",
+      headers: {
+        apikey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+        Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+        "Content-Type": "application/json",
+        Prefer: "return=minimal"
+      },
+      body: JSON.stringify({
+        email,
+        name: name || null,
+        source: "dispatch"
+      })
+    });
+
+    if (response.status === 409) {
+      return { provider: "supabase", ok: true, duplicate: true } satisfies NewsletterResult;
+    }
+
+    if (!response.ok) {
+      const responseText = await response.text();
+      let errorBody: unknown = null;
+
+      try {
+        errorBody = JSON.parse(responseText);
+      } catch {
+        errorBody = responseText.slice(0, 180);
+      }
+
+      const parsedError = typeof errorBody === "object" && errorBody !== null ? supabaseErrorSchema.safeParse(errorBody) : null;
+
+      throw new NewsletterProviderError("Supabase subscription failed", {
+        status: response.status,
+        statusText: response.statusText,
+        error: parsedError?.success ? parsedError.data : errorBody
+      });
+    }
+
+    return { provider: "supabase", ok: true, duplicate: false } satisfies NewsletterResult;
+  }
 
   if (process.env.GOOGLE_SHEETS_WEBHOOK_URL && process.env.GOOGLE_SHEETS_WEBHOOK_SECRET) {
     const response = await fetch(process.env.GOOGLE_SHEETS_WEBHOOK_URL, {

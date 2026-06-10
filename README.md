@@ -117,6 +117,23 @@ Set `NEXT_PUBLIC_GA_ID` to enable Google Analytics. Set `GOOGLE_SITE_VERIFICATIO
 
 The newsletter API is `app/api/newsletter/route.ts`. It validates with Zod and uses `lib/newsletter/provider.ts`.
 
+Supabase subscribers table:
+
+```env
+SUPABASE_URL=
+SUPABASE_SERVICE_ROLE_KEY=
+```
+
+```sql
+create table if not exists dispatch_subscribers (
+  id uuid primary key default gen_random_uuid(),
+  email text not null unique,
+  name text,
+  source text default 'dispatch',
+  created_at timestamptz default now()
+);
+```
+
 Google Sheets webhook:
 
 ```env
