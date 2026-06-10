@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0B0F19"/>
+  <path d="M0 520C210 420 340 610 560 500S870 290 1200 380v295H0Z" fill="#161E31"/>
+  <circle cx="860" cy="180" r="120" fill="#C7A86D" opacity=".24"/>
+  <text x="78" y="310" fill="#F8FAFC" font-family="Arial" font-size="64" font-weight="700">The Mystery Signal Archive</text>
+</svg>

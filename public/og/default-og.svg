@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0B0F19"/>
+  <circle cx="950" cy="120" r="260" fill="#4F46E5" opacity=".25"/>
+  <circle cx="220" cy="520" r="220" fill="#C7A86D" opacity=".18"/>
+  <text x="80" y="275" fill="#C7A86D" font-family="Arial" font-size="32" font-weight="700">Astra Parallax</text>
+  <text x="80" y="350" fill="#F8FAFC" font-family="Arial" font-size="58" font-weight="700">Mysteries, Technology,</text>
+  <text x="80" y="420" fill="#F8FAFC" font-family="Arial" font-size="58" font-weight="700">and Human Potential</text>
+</svg>

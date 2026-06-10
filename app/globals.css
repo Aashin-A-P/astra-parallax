@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: 222 37% 8%;
+  --background-soft: 220 37% 13%;
+  --surface: 221 37% 17%;
+  --surface-alt: 219 36% 21%;
+  --foreground: 210 40% 98%;
+  --muted: 215 20% 65%;
+  --muted-alt: 215 16% 47%;
+  --border: 224 33% 18%;
+  --primary: 39 41% 58%;
+  --primary-soft: 38 58% 82%;
+  --accent: 243 75% 59%;
+  --accent-soft: 262 83% 63%;
+  --success: 160 84% 39%;
+  --warning: 38 92% 50%;
+  --danger: 0 84% 60%;
+  --radius: 0.5rem;
+}
+
+.light {
+  color-scheme: light;
+  --background: 210 40% 98%;
+  --background-soft: 220 27% 96%;
+  --surface: 0 0% 100%;
+  --surface-alt: 214 32% 91%;
+  --foreground: 222 37% 8%;
+  --muted: 215 16% 47%;
+  --muted-alt: 215 20% 65%;
+  --border: 214 24% 82%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(79, 70, 229, 0.16), transparent 30rem),
+    radial-gradient(circle at 80% 10%, rgba(199, 168, 109, 0.13), transparent 26rem),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+::selection {
+  background: hsl(var(--primary) / 0.35);
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-150%);
+  border-radius: 0.5rem;
+  background: hsl(var(--foreground));
+  color: hsl(var(--background));
+  padding: 0.75rem 1rem;
+  transition: transform 150ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.prose-astra {
+  color: hsl(var(--foreground));
+}
+
+.prose-astra :where(p, li) {
+  color: hsl(var(--muted));
+  line-height: 1.8;
+}
+
+.prose-astra :where(h2, h3, h4) {
+  font-family: var(--font-display);
+  color: hsl(var(--foreground));
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose-astra a {
+  color: hsl(var(--primary-soft));
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.prose-astra pre {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background-soft));
+  padding: 1rem;
+}
+
+.prose-astra code {
+  border-radius: 0.25rem;
+  background: hsl(var(--surface-alt));
+  padding: 0.1rem 0.3rem;
+  color: hsl(var(--primary-soft));
+}
+
+.prose-astra pre code {
+  background: transparent;
+  padding: 0;
+}

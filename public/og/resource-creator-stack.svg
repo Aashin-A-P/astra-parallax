@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#121826"/>
+  <rect x="130" y="150" width="240" height="240" rx="18" fill="#161E31" stroke="#2A3553"/>
+  <rect x="430" y="110" width="240" height="320" rx="18" fill="#1D2840" stroke="#2A3553"/>
+  <rect x="730" y="150" width="240" height="240" rx="18" fill="#161E31" stroke="#2A3553"/>
+  <text x="130" y="565" fill="#F8FAFC" font-family="Arial" font-size="60" font-weight="700">Creator Stack</text>
+</svg>
