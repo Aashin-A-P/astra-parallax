@@ -117,6 +117,13 @@ Set `NEXT_PUBLIC_GA_ID` to enable Google Analytics. Set `GOOGLE_SITE_VERIFICATIO
 
 The newsletter API is `app/api/newsletter/route.ts`. It validates with Zod and uses `lib/newsletter/provider.ts`.
 
+Google Sheets webhook:
+
+```env
+GOOGLE_SHEETS_WEBHOOK_URL=
+GOOGLE_SHEETS_WEBHOOK_SECRET=
+```
+
 Brevo:
 
 ```env
