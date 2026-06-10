@@ -1,40 +1,38 @@
 export const siteConfig = {
   name: "Astra Parallax",
-  tagline: "Exploring mysteries, technology, and human potential.",
+  tagline: "Content, tools, projects, and ideas from one creator hub.",
   description:
-    "Astra Parallax explores mysteries, technology, productivity, AI, and human potential through articles, videos, curated resources, and future products.",
-  defaultTitle: "Astra Parallax - Mysteries, Technology, Productivity, and Digital Discovery",
+    "Astra Parallax is a central hub for content, side projects, affiliate resources, creator tools, and future digital products.",
+  defaultTitle: "Astra Parallax - Content, Store, Side Projects, and Creator Resources",
   url: process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "http://localhost:3000",
   ogImage: "/og/default-og.svg",
   categories: [
     {
       slug: "mysteries",
-      name: "Mysteries",
-      description: "Deep dives into unexplained patterns, ancient questions, strange signals, and the edges of human understanding."
+      name: "Ideas",
+      description: "Thoughtful notes, stories, observations, and research threads that spark new projects."
     },
     {
       slug: "technology",
-      name: "Technology",
-      description: "Practical and speculative technology coverage for creators, builders, and digitally curious readers."
+      name: "Tech",
+      description: "Useful tools, platforms, workflows, and practical technology for building online."
     },
     {
       slug: "productivity",
-      name: "Productivity",
-      description: "Systems, workflows, and operating principles for doing meaningful work without losing the bigger picture."
+      name: "Systems",
+      description: "Repeatable workflows for content, side hustles, productivity, and creator momentum."
     },
     {
       slug: "ai",
       name: "AI",
-      description: "Applied artificial intelligence, model workflows, creative automation, and the changing interface between people and machines."
+      description: "AI workflows, automation ideas, and tools that make solo creation easier."
     }
   ],
   nav: [
-    { href: "/mysteries", label: "Mysteries" },
-    { href: "/technology", label: "Technology" },
-    { href: "/productivity", label: "Productivity" },
-    { href: "/ai", label: "AI" },
-    { href: "/resources", label: "Resources" },
-    { href: "/store", label: "Store" }
+    { href: "/content", label: "Content" },
+    { href: "/blog", label: "Blog" },
+    { href: "/store", label: "Store" },
+    { href: "/about", label: "About Us" }
   ],
   socials: {
     youtube: "https://youtube.com/@astraparallax",

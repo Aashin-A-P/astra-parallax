@@ -1,19 +1,14 @@
-import { getAllCategories, getAllPosts, getAllResources, getPostBySlug } from "@/lib/content";
+import { getAllCategories, getAllPosts, getAllResources } from "@/lib/content";
 
 describe("content adapter", () => {
-  it("loads published posts with computed URLs and categories", () => {
+  it("loads posts collection without requiring seed content", () => {
     const posts = getAllPosts();
-    expect(posts.length).toBeGreaterThanOrEqual(2);
-    expect(posts[0]).toHaveProperty("url");
-    expect(posts.map((post) => post.normalizedCategory)).toEqual(expect.arrayContaining(["mysteries", "productivity"]));
+    expect(Array.isArray(posts)).toBe(true);
+    expect(posts.every((post) => post.url.startsWith("/articles/"))).toBe(true);
   });
 
-  it("finds posts by slug", () => {
-    expect(getPostBySlug("mystery-signal-archive")?.title).toContain("Mystery Signal");
-  });
-
-  it("returns configured categories and resources", () => {
+  it("returns configured categories and an optional resources collection", () => {
     expect(getAllCategories()).toHaveLength(4);
-    expect(getAllResources().length).toBeGreaterThanOrEqual(2);
+    expect(Array.isArray(getAllResources())).toBe(true);
   });
 });

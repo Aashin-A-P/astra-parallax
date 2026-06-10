@@ -49,19 +49,29 @@ export default async function CategoryPage({ params }: Props) {
       </section>
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <SectionHeader eyebrow="Featured" title="Start with the strongest signals." />
-        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {(posts.filter((post) => post.featured).length ? posts.filter((post) => post.featured) : posts).slice(0, 3).map((post) => (
-            <ArticleCard key={post.slug} post={post} />
-          ))}
-        </div>
+        {posts.length ? (
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {(posts.filter((post) => post.featured).length ? posts.filter((post) => post.featured) : posts).slice(0, 3).map((post) => (
+              <ArticleCard key={post.slug} post={post} />
+            ))}
+          </div>
+        ) : (
+          <div className="mt-6 rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_rgba(15,23,42,0.07)]">
+            No posts are published in this category yet.
+          </div>
+        )}
         <div className="mt-14">
           <SectionHeader eyebrow="All posts" title={`Everything in ${category.name}.`} />
         </div>
-        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <ArticleCard key={post.slug} post={post} />
-          ))}
-        </div>
+        {posts.length ? (
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => (
+              <ArticleCard key={post.slug} post={post} />
+            ))}
+          </div>
+        ) : (
+          <p className="mt-6 text-muted">Add real articles in content/posts to populate this page.</p>
+        )}
         {resources.length ? (
           <>
             <div className="mt-14">

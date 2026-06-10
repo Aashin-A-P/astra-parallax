@@ -31,19 +31,27 @@ export default function ResourcesPage() {
           <div className="max-w-3xl">
             <AffiliateDisclosure />
           </div>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <Badge key={category}>{category}</Badge>
-            ))}
-          </div>
+          {categories.length ? (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {categories.map((category) => (
+                <Badge key={category}>{category}</Badge>
+              ))}
+            </div>
+          ) : null}
           <div className="mt-12">
             <SectionHeader eyebrow="Toolkit" title="Choose the next instrument." />
           </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {resources.map((resource) => (
-              <ResourceCard key={resource.slug} resource={resource} />
-            ))}
-          </div>
+          {resources.length ? (
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {resources.map((resource) => (
+                <ResourceCard key={resource.slug} resource={resource} />
+              ))}
+            </div>
+          ) : (
+            <div className="mt-8 rounded-2xl border border-border bg-surface p-8 text-muted shadow-[0_16px_48px_rgba(15,23,42,0.07)]">
+              No resources are published yet.
+            </div>
+          )}
         </div>
       </section>
       <JsonLd data={collectionPageSchema("Resources", "Curated tools and affiliate resources from Astra Parallax.", "/resources")} />

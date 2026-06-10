@@ -1,10 +1,10 @@
 import { Brain, Cpu, Rocket, Zap } from "lucide-react";
 
 const items = [
-  { icon: Rocket, label: "Build", text: "Turn curiosity into public work, systems, and products." },
-  { icon: Brain, label: "Think", text: "Study mystery, technology, and human potential with discipline." },
-  { icon: Cpu, label: "Automate", text: "Use AI and tools to compound creative output." },
-  { icon: Zap, label: "Move", text: "Stay motivated by designing repeatable momentum." }
+  { icon: Rocket, label: "Projects", text: "Showcase active side hustles, experiments, and future launches." },
+  { icon: Brain, label: "Content", text: "Publish useful articles that bring people back to the hub." },
+  { icon: Cpu, label: "Tools", text: "Recommend software, resources, and affiliate products clearly." },
+  { icon: Zap, label: "Growth", text: "Turn attention from social platforms into owned audience momentum." }
 ];
 
 export function MissionPanel() {
@@ -13,8 +13,8 @@ export function MissionPanel() {
       {items.map((item) => {
         const Icon = item.icon;
         return (
-          <div key={item.label} className="rounded-lg border border-border bg-background/60 p-5 backdrop-blur transition-colors hover:bg-surface">
-            <div className="mb-4 grid h-10 w-10 place-items-center rounded-md bg-accent/15 text-primary-soft">
+          <div key={item.label} className="rounded-lg border border-border bg-surface p-5 shadow-sm transition-colors hover:bg-surface-alt">
+            <div className="mb-4 grid h-10 w-10 place-items-center rounded-md bg-primary/10 text-primary">
               <Icon className="h-5 w-5" />
             </div>
             <h3 className="font-display text-xl font-semibold">{item.label}</h3>

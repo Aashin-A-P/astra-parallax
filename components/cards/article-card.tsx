@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function ArticleCard({ post }: { post: Post }) {
   return (
-    <Card className="group h-full overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-primary/45 hover:bg-surface-alt hover:shadow-glow">
+    <Card className="group h-full overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-surface hover:shadow-glow">
       {post.coverImage ? (
         <Link href={post.url} className="block overflow-hidden border-b border-border">
           <Image src={post.coverImage} alt="" width={900} height={506} className="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-105" />
@@ -28,7 +28,7 @@ export function ArticleCard({ post }: { post: Post }) {
         <p className="mb-4 text-sm leading-6 text-muted">{post.excerpt}</p>
         <div className="mb-4 flex flex-wrap gap-2">
           {post.tags.slice(0, 3).map((tag) => (
-            <span key={tag} className="rounded-full bg-background-soft px-2 py-1 text-[11px] text-muted-alt">
+            <span key={tag} className="rounded-full bg-background-soft px-2.5 py-1 text-[11px] font-semibold text-muted-alt">
               {tag}
             </span>
           ))}

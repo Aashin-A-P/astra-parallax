@@ -28,7 +28,7 @@ const config: Config = {
         display: ["var(--font-display)", ...defaultTheme.fontFamily.sans]
       },
       boxShadow: {
-        glow: "0 0 60px rgba(199, 168, 109, 0.15)"
+        glow: "0 22px 70px rgba(37, 99, 235, 0.16), 0 10px 40px rgba(249, 115, 22, 0.1)"
       }
     }
   },

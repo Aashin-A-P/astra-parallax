@@ -22,9 +22,6 @@ export function SiteFooter() {
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}
-              <li>
-                <Link href="/about">About</Link>
-              </li>
             </ul>
           </div>
           <div>

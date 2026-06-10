@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title">
   <title id="title">Astra Parallax mark</title>
-  <rect width="128" height="128" rx="18" fill="#0B0F19"/>
-  <path d="M64 18 96 104 64 86 32 104 64 18Z" fill="#C7A86D"/>
-  <path d="M64 38 80 83 64 74 48 83 64 38Z" fill="#0B0F19"/>
+  <rect width="128" height="128" rx="18" fill="#FFFBF5"/>
+  <path d="M64 18 96 104 64 86 32 104 64 18Z" fill="#2563EB"/>
+  <path d="M64 38 80 83 64 74 48 83 64 38Z" fill="#FFFBF5"/>
 </svg>

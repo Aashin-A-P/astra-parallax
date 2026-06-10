@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Space_Grotesk } from "next/font/google";
+import { Geist, Sora } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@/components/analytics/analytics";
 import { WebVitals } from "@/components/analytics/web-vitals";
@@ -12,13 +12,13 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { organizationSchema, websiteSchema } from "@/lib/seo/schema";
 
 const bodyFont = Geist({ subsets: ["latin"], variable: "--font-body" });
-const displayFont = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
+const displayFont = Sora({ subsets: ["latin"], variable: "--font-display", weight: ["500", "600", "700", "800"] });
 
 export const metadata: Metadata = buildMetadata();
 
 export const viewport: Viewport = {
-  themeColor: "#0B0F19",
-  colorScheme: "dark light"
+  themeColor: "#FFFBF5",
+  colorScheme: "light"
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${bodyFont.variable} ${displayFont.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light" enableSystem={false}>
           <a href="#main" className="skip-link">
             Skip to content
           </a>
