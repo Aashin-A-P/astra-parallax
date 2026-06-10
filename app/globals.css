@@ -189,6 +189,32 @@ body {
   text-shadow: 0 12px 44px rgba(0, 0, 0, 0.55);
 }
 
+.light .text-metallic {
+  background: linear-gradient(180deg, #162033 0%, #8a4d0b 52%, #1e2a42 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 10px 34px rgba(255, 249, 236, 0.72);
+}
+
+.astra-hero-vignette {
+  background: linear-gradient(90deg, hsl(var(--background)) 0%, hsl(var(--background) / 0.78) 44%, hsl(var(--background) / 0.2) 100%);
+}
+
+.astra-hero-depth {
+  background: linear-gradient(0deg, hsl(var(--background)) 0%, transparent 48%, hsl(var(--background) / 0.2) 100%);
+}
+
+.light .astra-hero-vignette {
+  background: linear-gradient(90deg, rgba(255, 249, 236, 0.86) 0%, rgba(255, 249, 236, 0.42) 38%, rgba(255, 249, 236, 0.06) 100%);
+}
+
+.light .astra-hero-depth {
+  background:
+    linear-gradient(0deg, hsl(var(--background)) 0%, rgba(255, 249, 236, 0.08) 42%, rgba(8, 10, 18, 0.16) 100%),
+    radial-gradient(circle at 20% 50%, rgba(255, 249, 236, 0.62), transparent 22rem);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .stars-layer {
     animation: star-drift 42s linear infinite;

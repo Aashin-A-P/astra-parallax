@@ -13,8 +13,8 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden border-b border-border">
       <Image src="/images/astra-cover.png" alt="" fill priority sizes="100vw" className="object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/78 to-background/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/20" />
+      <div className="astra-hero-vignette absolute inset-0" />
+      <div className="astra-hero-depth absolute inset-0" />
       <StarfieldBackground />
       <motion.div
         className="relative mx-auto grid min-h-[780px] max-w-7xl content-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8"
@@ -30,7 +30,7 @@ export function HeroSection() {
           <h1 className="max-w-4xl font-display text-4xl font-extrabold leading-[1.04] tracking-[0.02em] text-metallic sm:text-5xl lg:text-7xl">
             One clean hub for content, projects, tools, and digital income streams.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-primary-soft/90 sm:text-xl">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-muted sm:text-xl dark:text-primary-soft/90">
             Explore the articles, affiliate resources, experiments, and future products behind Astra Parallax. Built to make every side hustle easier to find, trust, and grow.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
