@@ -29,10 +29,10 @@ export function HeroSection() {
             Explore - Question - Elevate
           </div>
           <h1 className="max-w-4xl font-display text-4xl font-extrabold leading-[1.04] tracking-[0.02em] text-metallic sm:text-5xl lg:text-7xl">
-            One clean hub for content, projects, tools, and digital income streams.
+            Explore curious content, digital design, AI workflows, and curated resources.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted sm:text-xl dark:text-primary-soft/90">
-            Explore the articles, affiliate resources, experiments, and future products behind Astra Parallax. Built to make every side hustle easier to find, trust, and grow.
+            Astra Parallax connects videos, articles, design work, websites, print-on-demand concepts, and recommended tools into one professional home.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
@@ -41,11 +41,11 @@ export function HeroSection() {
               </Link>
             </Button>
             <Button asChild size="lg" variant="secondary">
-              <Link href="/blog">Read Blog</Link>
+              <Link href="/studio">View Studio</Link>
             </Button>
           </div>
           <div className="mt-10 grid gap-3 text-sm font-medium text-muted sm:grid-cols-3">
-            {["Videos and reels", "Blog posts", "Affiliate tools"].map((item) => (
+            {["Mystery and tech content", "Design and websites", "Store and resources"].map((item) => (
               <div key={item} className="flex items-center gap-2 rounded-xl border border-primary/25 bg-background/58 px-4 py-3 text-primary-soft shadow-sm backdrop-blur">
                 <CheckCircle2 className="h-4 w-4 text-primary" />
                 {item}

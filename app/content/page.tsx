@@ -53,8 +53,8 @@ export default function ContentPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Channels"
-          title="Content channels are ready to connect."
-          description="No dummy videos, reels, or pins are published yet. Add real channel embeds or links when you are ready."
+          title="A structured home for every channel."
+          description="Videos, reels, pins, and supporting notes will be organized here as official Astra Parallax content is released."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {channels.map((channel) => {
@@ -75,10 +75,10 @@ export default function ContentPage() {
           })}
         </div>
         <div className="mt-10 rounded-2xl border border-border bg-surface p-8 shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)]">
-          <Badge>No media yet</Badge>
-          <h2 className="mt-4 font-display text-3xl font-bold tracking-tight">Add real content when your channels are ready.</h2>
+          <Badge>Publishing soon</Badge>
+          <h2 className="mt-4 font-display text-3xl font-bold tracking-tight">The content archive will feature released media only.</h2>
           <p className="mt-3 max-w-2xl text-muted">
-            This page is intentionally empty of fake embeds. It is ready for YouTube videos, Instagram reels, Pinterest pins, or curated links.
+            Supporting notes, video links, social posts, and channel assets will be added here when they are ready for visitors.
           </p>
         </div>
       </section>

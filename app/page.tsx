@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Flame, PlayCircle, Shield, Telescope } from "lucide-react";
+import { ArrowRight, Brush, Flame, PlayCircle, Shield, Telescope } from "lucide-react";
 import { ArticleCard } from "@/components/cards/article-card";
 import { ResourceCard } from "@/components/cards/resource-card";
 import { HeroSection } from "@/components/sections/hero-section";
@@ -27,9 +27,9 @@ export default function HomePage() {
         <div className="noise-overlay absolute inset-0 opacity-30" />
         <div className="relative mx-auto max-w-7xl">
           <SectionHeader
-            eyebrow="Hub sections"
-            title="Everything important, organized in one place."
-            description="Astra Parallax brings together content, tools, AI workflows, systems, and store resources so each side hustle has a clear home."
+            eyebrow="Astra Parallax"
+            title="A professional home for every creative direction."
+            description="Content, blog writing, AI workflows, design work, websites, print-on-demand concepts, and curated resources are organized into a clear visitor journey."
           />
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {categories.map((category, index) => (
@@ -45,9 +45,9 @@ export default function HomePage() {
         <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <SectionHeader
-              eyebrow="Creator dashboard"
-              title="A central base for building multiple income streams."
-              description="Use the site as a public home for articles, affiliate resources, digital products, experiments, and future services."
+              eyebrow="Operating base"
+              title="Built as a long-term digital studio and publishing base."
+              description="The site is structured to grow with new videos, articles, design releases, websites, store collections, affiliate resources, and audience updates."
             />
             <Button asChild className="mt-7" variant="secondary">
               <Link href="/blog">
@@ -71,7 +71,7 @@ export default function HomePage() {
               (featuredPosts.length ? featuredPosts : latestPosts).slice(0, 4).map((post) => <ArticleCard key={post.slug} post={post} />)
             ) : (
               <div className="rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)] md:col-span-2">
-                No blog posts yet. Add real articles in <code className="rounded bg-background-soft px-1.5 py-0.5">content/posts</code>.
+                The blog archive is being prepared. New writing will appear here as soon as publication begins.
               </div>
             )}
           </div>
@@ -83,7 +83,7 @@ export default function HomePage() {
               resources.map((resource) => <ResourceCard key={resource.slug} resource={resource} />)
             ) : (
               <div className="rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)]">
-                No resources yet. Add real store resources in <code className="rounded bg-background-soft px-1.5 py-0.5">content/resources</code>.
+                Store showcases are being curated. Featured resources and product links will appear here after review.
               </div>
             )}
           </div>
@@ -93,17 +93,17 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(103,232,249,0.16),transparent_20rem),radial-gradient(circle_at_80%_70%,rgba(167,139,250,0.18),transparent_24rem)]" />
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative">
-            <Badge>Social to website</Badge>
-            <h2 className="mt-3 font-display text-3xl font-semibold">Turn scattered attention into one clear destination.</h2>
+            <Badge>Audience path</Badge>
+            <h2 className="mt-3 font-display text-3xl font-semibold">Turn platform discovery into a clear destination.</h2>
             <p className="mt-4 text-muted">
-              Connect YouTube, Instagram, Pinterest, resources, content, and future products into a single website people can understand quickly.
+              Connect YouTube, Instagram, Pinterest, blog notes, design work, store resources, and newsletter updates through a website people can understand quickly.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {[
-                { icon: Telescope, text: "Content that brings people in" },
+                { icon: Telescope, text: "Mystery, facts, and tech content" },
                 { icon: Shield, text: "Owned audience capture" },
-                { icon: Flame, text: "Side-hustle momentum" },
-                { icon: PlayCircle, text: "Social-first distribution" }
+                { icon: Brush, text: "Design and website portfolio" },
+                { icon: Flame, text: "Store and affiliate pathway" }
               ].map((item) => {
                 const Icon = item.icon;
                 return (
@@ -115,8 +115,8 @@ export default function HomePage() {
               })}
             </div>
             <Button asChild className="mt-6" variant="secondary">
-              <Link href="/content">
-                Explore content <ArrowRight className="h-4 w-4" />
+              <Link href="/studio">
+                Explore studio <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
           </div>
@@ -142,10 +142,10 @@ export default function HomePage() {
       </section>
       <NewsletterCta />
       <section className="relative mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
-        <Badge>Creator hub</Badge>
-        <h2 className="mx-auto mt-4 max-w-3xl font-display text-4xl font-semibold text-cosmic">One website for everything you are building next.</h2>
+        <Badge>Starting point</Badge>
+        <h2 className="mx-auto mt-4 max-w-3xl font-display text-4xl font-semibold text-cosmic">Astra Parallax is designed to grow with every release.</h2>
         <p className="mx-auto mt-4 max-w-2xl text-muted">
-          Keep your content, store, resources, and experiments connected so every visitor knows where to go next.
+          Each section is prepared for real work: videos, articles, designs, websites, product collections, recommended tools, and audience updates.
         </p>
       </section>
     </>

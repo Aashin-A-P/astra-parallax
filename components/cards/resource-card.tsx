@@ -17,7 +17,7 @@ export function ResourceCard({ resource }: { resource: Resource }) {
       <CardHeader>
         <div className="mb-3 flex flex-wrap gap-2">
           <Badge>{resource.category}</Badge>
-          {resource.affiliate ? <Badge>Affiliate-ready</Badge> : null}
+          {resource.affiliate ? <Badge>Recommended</Badge> : null}
         </div>
         <CardTitle>
           <Link href={resource.url}>{resource.title}</Link>

@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
   title: "Store",
-  description: "Affiliate resources, recommended tools, digital products, and future offers from Astra Parallax.",
+  description: "Curated tools, affiliate resources, print-on-demand links, and digital product collections from Astra Parallax.",
   path: "/store"
 });
 
@@ -20,15 +20,15 @@ export default function StorePage() {
         <StarfieldBackground className="opacity-80" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <Badge>Store</Badge>
-          <h1 className="mt-4 max-w-3xl font-display text-5xl font-semibold text-cosmic">Tools, affiliate resources, and future products in one place.</h1>
+          <h1 className="mt-4 max-w-3xl font-display text-5xl font-semibold text-cosmic">Curated tools, product links, and design-led store collections.</h1>
           <p className="mt-4 max-w-2xl text-muted">
-            The Astra Parallax store brings together recommended tools, affiliate picks, templates, guides, and future offers connected to the creator hub.
+            The Astra Parallax store brings together recommended tools, affiliate picks, print-on-demand collections, templates, and digital resources selected with care.
           </p>
           <div className="mt-16">
-            <Badge>Affiliate toolkit</Badge>
-            <h2 className="mt-4 font-display text-4xl font-bold text-cosmic">Recommended tools and resources.</h2>
+            <Badge>Storefront</Badge>
+            <h2 className="mt-4 font-display text-4xl font-bold text-cosmic">Recommended tools and product showcases.</h2>
             <p className="mt-3 max-w-2xl text-muted">
-              Store also houses affiliate-ready resources, software recommendations, and creator tools.
+              Store listings will focus on useful software, design resources, affiliate recommendations, and print-on-demand product directions.
             </p>
             {resources.length ? (
               <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -38,10 +38,10 @@ export default function StorePage() {
               </div>
             ) : (
               <div className="mt-8 rounded-2xl border border-border bg-surface p-8 shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)]">
-                <Badge>No store items yet</Badge>
-                <h3 className="mt-4 font-display text-2xl font-bold tracking-tight">Your store is ready for real resources.</h3>
+                <Badge>Store opening soon</Badge>
+                <h3 className="mt-4 font-display text-2xl font-bold tracking-tight">The store will feature reviewed items only.</h3>
                 <p className="mt-3 max-w-2xl text-muted">
-                  Add real affiliate listings or product pages in <code className="rounded bg-background-soft px-1.5 py-0.5">content/resources</code>.
+                  Product links, affiliate recommendations, and print-on-demand collections will appear here after they are selected and prepared.
                 </p>
               </div>
             )}

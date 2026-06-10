@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
   title: "Blog",
-  description: "Read Astra Parallax blog posts across ideas, technology, systems, AI, and side-hustle growth.",
+  description: "Read Astra Parallax blog posts across curiosity, technology, AI, design, content creation, and digital growth.",
   path: "/blog"
 });
 
@@ -26,10 +26,10 @@ export default function BlogPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <Badge>Blog</Badge>
           <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight text-cosmic sm:text-6xl">
-            Blog posts for projects, tools, systems, and online growth.
+            Essays, notes, experiences, and field reports from Astra Parallax.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-            Written posts, notes, guides, and long-form thoughts will live here.
+            The blog is reserved for written reflections, practical lessons, creative decisions, and deeper notes behind the work.
           </p>
           <div className="mt-8 flex flex-wrap gap-2">
             {categories.map((category) => (
@@ -52,10 +52,10 @@ export default function BlogPage() {
           </>
         ) : (
           <div className="rounded-2xl border border-border bg-surface p-8 shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)]">
-            <Badge>No posts yet</Badge>
-            <h2 className="mt-4 font-display text-3xl font-bold tracking-tight">Your blog is ready for real writing.</h2>
+            <Badge>Writing archive</Badge>
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-tight">The first articles are being prepared.</h2>
             <p className="mt-3 max-w-2xl text-muted">
-              Add MDX files to <code className="rounded bg-background-soft px-1.5 py-0.5">content/posts</code> when you are ready to publish text posts.
+              Published essays and notes will appear here once they are ready to represent Astra Parallax clearly.
             </p>
           </div>
         )}
@@ -69,7 +69,7 @@ export default function BlogPage() {
             ))}
           </div>
         ) : (
-          <p className="mt-6 text-muted">No published blog posts yet.</p>
+          <p className="mt-6 text-muted">The archive will open with the first published article.</p>
         )}
       </section>
     </>

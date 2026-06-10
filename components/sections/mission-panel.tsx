@@ -1,10 +1,10 @@
-import { Brain, Cpu, Rocket, Zap } from "lucide-react";
+import { Brain, Cpu, Palette, Zap } from "lucide-react";
 
 const items = [
-  { icon: Rocket, label: "Projects", text: "Showcase active side hustles, experiments, and future launches." },
-  { icon: Brain, label: "Content", text: "Publish useful articles that bring people back to the hub." },
-  { icon: Cpu, label: "Tools", text: "Recommend software, resources, and affiliate products clearly." },
-  { icon: Zap, label: "Growth", text: "Turn attention from social platforms into owned audience momentum." }
+  { icon: Brain, label: "Content", text: "Organize videos, reels, facts, notes, and articles around clear topics visitors can follow." },
+  { icon: Palette, label: "Design", text: "Create a professional place for visual design, websites, product concepts, and brand assets." },
+  { icon: Cpu, label: "AI Systems", text: "Document practical AI workflows that support research, creation, publishing, and digital products." },
+  { icon: Zap, label: "Commerce", text: "Connect curated tools, affiliate resources, and print-on-demand collections through one trusted store." }
 ];
 
 export function MissionPanel() {

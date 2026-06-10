@@ -10,10 +10,10 @@ const categoryIcons: Record<string, LucideIcon> = {
 };
 
 const categoryCopy: Record<string, string> = {
-  mysteries: "Ideas, essays, observations, and research that feed new projects.",
-  technology: "Tools, software, and digital systems for practical online work.",
-  productivity: "Processes and operating systems for managing multiple hustles.",
-  ai: "Automation and AI workflows that help a solo creator move faster."
+  mysteries: "Mystery-led ideas, curious facts, stories, and notes that support videos and short-form content.",
+  technology: "Tools, platforms, workflows, and digital systems for building sharper online work.",
+  productivity: "Creative systems for planning, publishing, designing, researching, and staying consistent.",
+  ai: "AI workflows, automation ideas, and creative methods for building useful digital assets."
 };
 
 export function SignalPathCard({ category, index }: { category: SiteCategory; index: number }) {

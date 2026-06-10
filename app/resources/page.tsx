@@ -11,7 +11,7 @@ import { collectionPageSchema, itemListSchema } from "@/lib/seo/schema";
 
 export const metadata: Metadata = buildMetadata({
   title: "Resources",
-  description: "Curated tools, platforms, systems, and affiliate-ready recommendations from Astra Parallax.",
+  description: "Curated tools, platforms, systems, and recommended resources from Astra Parallax.",
   path: "/resources"
 });
 
@@ -24,9 +24,9 @@ export default function ResourcesPage() {
         <StarfieldBackground className="opacity-75" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <Badge>Resources</Badge>
-          <h1 className="mt-4 max-w-3xl font-display text-5xl font-semibold text-cosmic">Curated tools for curious builders.</h1>
+          <h1 className="mt-4 max-w-3xl font-display text-5xl font-semibold text-cosmic">Curated resources for creative digital work.</h1>
           <p className="mt-4 max-w-2xl text-muted">
-            Affiliate-ready listings for software, research tools, creator systems, and digital infrastructure.
+            A selected library for software, research tools, design resources, publishing systems, and digital infrastructure.
           </p>
           <div className="max-w-3xl">
             <AffiliateDisclosure />
@@ -49,7 +49,7 @@ export default function ResourcesPage() {
             </div>
           ) : (
             <div className="mt-8 rounded-2xl border border-border bg-surface p-8 text-muted shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)]">
-              No resources are published yet.
+              The resource library will open with reviewed tools and recommendations.
             </div>
           )}
         </div>

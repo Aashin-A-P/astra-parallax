@@ -34,7 +34,7 @@ export function SearchPageClient({ items }: { items: SearchItem[] }) {
         ))}
         {!items.length ? (
           <div className="rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)]">
-            No searchable content is published yet.
+            Searchable content will appear as the first articles, resources, and studio entries are published.
           </div>
         ) : null}
         {items.length > 0 && query.trim() && results.length === 0 ? <p className="text-sm text-muted">No results found.</p> : null}

@@ -1,36 +1,37 @@
 export const siteConfig = {
   name: "Astra Parallax",
-  tagline: "Content, tools, projects, and ideas from one creator hub.",
+  tagline: "Content, design, AI, and curated digital resources from one independent studio.",
   description:
-    "Astra Parallax is a central hub for content, side projects, affiliate resources, creator tools, and future digital products.",
-  defaultTitle: "Astra Parallax - Content, Store, Side Projects, and Creator Resources",
+    "Astra Parallax is an independent digital studio and publishing hub for curiosity-driven content, practical AI workflows, design work, websites, print-on-demand concepts, and curated resources.",
+  defaultTitle: "Astra Parallax - Content, Design, AI, Store, and Digital Resources",
   url: process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "http://localhost:3000",
   ogImage: "/og/default-og.svg",
   categories: [
     {
       slug: "mysteries",
-      name: "Ideas",
-      description: "Thoughtful notes, stories, observations, and research threads that spark new projects."
+      name: "Mysteries",
+      description: "Curiosity-led stories, strange questions, daily facts, and research notes for curious minds."
     },
     {
       slug: "technology",
-      name: "Tech",
-      description: "Useful tools, platforms, workflows, and practical technology for building online."
+      name: "Technology",
+      description: "Useful tools, platforms, digital systems, and practical technology for modern online work."
     },
     {
       slug: "productivity",
-      name: "Systems",
-      description: "Repeatable workflows for content, side hustles, productivity, and creator momentum."
+      name: "Creative Systems",
+      description: "Repeatable workflows for content planning, publishing, research, design, and audience growth."
     },
     {
       slug: "ai",
       name: "AI",
-      description: "AI workflows, automation ideas, and tools that make solo creation easier."
+      description: "AI workflows, automation ideas, creative methods, and tools for building useful digital work."
     }
   ],
   nav: [
     { href: "/content", label: "Content" },
     { href: "/blog", label: "Blog" },
+    { href: "/studio", label: "Studio" },
     { href: "/store", label: "Store" },
     { href: "/about", label: "About Us" }
   ],

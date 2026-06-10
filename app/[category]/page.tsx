@@ -57,7 +57,7 @@ export default async function CategoryPage({ params }: Props) {
           </div>
         ) : (
           <div className="mt-6 rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)]">
-            No posts are published in this category yet.
+            This category will open with the first published article.
           </div>
         )}
         <div className="mt-14">
@@ -70,7 +70,7 @@ export default async function CategoryPage({ params }: Props) {
             ))}
           </div>
         ) : (
-          <p className="mt-6 text-muted">Add real articles in content/posts to populate this page.</p>
+          <p className="mt-6 text-muted">Articles will appear here as the publishing archive grows.</p>
         )}
         {resources.length ? (
           <>

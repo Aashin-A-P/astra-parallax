@@ -1,7 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Instagram, Mail, Pin, Youtube, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { NewsletterForm } from "@/components/newsletter/newsletter-form";
+
+const socialLinks = [
+  { key: "youtube", label: "YouTube", icon: Youtube },
+  { key: "pinterest", label: "Pinterest", icon: Pin },
+  { key: "instagram", label: "Instagram", icon: Instagram },
+  { key: "x", label: "X", icon: MessageCircle },
+  { key: "email", label: "Email", icon: Mail }
+] as const;
 
 export function SiteFooter() {
   return (
@@ -32,12 +41,26 @@ export function SiteFooter() {
           </div>
           <div>
             <h2 className="font-medium text-foreground">Social</h2>
-            <ul className="mt-3 space-y-2 text-muted">
-              {Object.entries(siteConfig.socials).map(([key, value]) => (
-                <li key={key}>
-                  <a href={value.startsWith("http") ? value : `mailto:${value}`}>{key}</a>
+            <ul className="mt-3 grid gap-2">
+              {socialLinks.map((item) => {
+                const Icon = item.icon;
+                const value = siteConfig.socials[item.key];
+                return (
+                <li key={item.key}>
+                  <a
+                    href={value.startsWith("http") ? value : `mailto:${value}`}
+                    className="group flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3 py-2 text-muted transition hover:-translate-y-0.5 hover:border-primary/40 hover:bg-surface hover:text-primary hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    target={value.startsWith("http") ? "_blank" : undefined}
+                    rel={value.startsWith("http") ? "noreferrer" : undefined}
+                  >
+                    <span className="grid h-7 w-7 place-items-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-background">
+                      <Icon className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="font-medium">{item.label}</span>
+                  </a>
                 </li>
-              ))}
+                );
+              })}
             </ul>
           </div>
         </div>
