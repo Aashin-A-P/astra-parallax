@@ -11,17 +11,18 @@ import { StarfieldBackground } from "@/components/visual/starfield-background";
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
   return (
-    <section className="relative overflow-hidden border-b border-border">
-      <Image src="/images/astra-cover.png" alt="" fill priority sizes="100vw" className="object-cover" />
-      <div className="astra-hero-vignette absolute inset-0" />
-      <div className="astra-hero-depth absolute inset-0" />
-      <StarfieldBackground />
+    <section className="relative overflow-hidden border-b border-border bg-background">
+      <div className="relative min-h-[360px] overflow-hidden border-b border-primary/20 sm:min-h-[460px] lg:min-h-[620px]">
+        <Image src="/images/astra-cover.png" alt="" fill priority sizes="100vw" className="object-cover object-center" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/10" />
+      </div>
       <motion.div
-        className="relative mx-auto grid min-h-[780px] max-w-7xl content-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8"
+        className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20"
         initial={reduceMotion ? false : { opacity: 0, y: 20 }}
         animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
+        <StarfieldBackground className="opacity-40" />
         <div className="max-w-4xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-background/55 px-4 py-2 text-sm font-semibold text-primary-soft backdrop-blur">
             <Sparkles className="h-4 w-4" />
