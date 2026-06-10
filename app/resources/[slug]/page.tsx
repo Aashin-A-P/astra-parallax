@@ -8,6 +8,7 @@ import { NewsletterCta } from "@/components/sections/newsletter-cta";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { StarfieldBackground } from "@/components/visual/starfield-background";
 import { getAllResources, getResourceBySlug } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo/metadata";
 
@@ -31,7 +32,9 @@ export default async function ResourcePage({ params }: Props) {
 
   return (
     <>
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
+      <section className="relative overflow-hidden border-b border-border bg-background-soft/40">
+        <StarfieldBackground className="opacity-65" />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
         <article>
           <div className="mb-5 flex flex-wrap gap-2">
             <Badge>{resource.category}</Badge>
@@ -39,10 +42,10 @@ export default async function ResourcePage({ params }: Props) {
               <Badge key={tag}>{tag}</Badge>
             ))}
           </div>
-          <h1 className="font-display text-4xl font-semibold">{resource.title}</h1>
+          <h1 className="font-display text-5xl font-semibold text-cosmic">{resource.title}</h1>
           <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">{resource.excerpt}</p>
           {resource.coverImage ? (
-            <div className="mt-8 overflow-hidden rounded-lg border border-border">
+            <div className="mt-8 overflow-hidden rounded-lg border border-border shadow-glow">
               <Image src={resource.coverImage} alt="" width={1200} height={675} className="h-auto w-full object-cover" />
             </div>
           ) : null}
@@ -50,7 +53,7 @@ export default async function ResourcePage({ params }: Props) {
           <ArticleRenderer source={resource.body} />
         </article>
         <aside>
-          <Card className="sticky top-24">
+          <Card className="sticky top-24 bg-background/80 backdrop-blur">
             <CardHeader>
               <CardTitle>Resource access</CardTitle>
             </CardHeader>
@@ -73,6 +76,7 @@ export default async function ResourcePage({ params }: Props) {
             </CardContent>
           </Card>
         </aside>
+        </div>
       </section>
       <NewsletterCta />
     </>

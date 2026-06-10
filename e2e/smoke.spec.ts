@@ -7,7 +7,7 @@ test("home page loads", async ({ page }) => {
 
 test("category page loads", async ({ page }) => {
   await page.goto("/mysteries");
-  await expect(page.getByRole("heading", { name: "Mysteries" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Mysteries", exact: true })).toBeVisible();
 });
 
 test("article page loads", async ({ page }) => {
