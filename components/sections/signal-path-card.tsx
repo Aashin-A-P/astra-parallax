@@ -21,9 +21,9 @@ export function SignalPathCard({ category, index }: { category: SiteCategory; in
   return (
     <Link
       href={`/${category.slug}`}
-      className="group relative min-h-64 overflow-hidden rounded-lg border border-border bg-surface p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      className="group relative min-h-64 overflow-hidden rounded-lg border border-border bg-surface/90 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/45 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(37,99,235,0.1),transparent_12rem)] opacity-0 transition-opacity group-hover:opacity-100" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,hsl(var(--accent)_/_0.16),transparent_12rem),radial-gradient(circle_at_20%_90%,hsl(var(--primary)_/_0.12),transparent_10rem)] opacity-0 transition-opacity group-hover:opacity-100" />
       <div className="relative">
         <div className="mb-8 flex items-center justify-between">
           <div className="grid h-12 w-12 place-items-center rounded-lg border border-primary/20 bg-primary/10 text-primary">

@@ -44,6 +44,11 @@ export function buildMetadata({ title, description, path = "/", image, noIndex }
     },
     verification: {
       google: process.env.GOOGLE_SITE_VERIFICATION
+    },
+    icons: {
+      icon: "/favicon.png",
+      shortcut: "/favicon.png",
+      apple: "/icons/astra-icon.png"
     }
   };
 }

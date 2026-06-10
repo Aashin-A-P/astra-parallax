@@ -36,10 +36,10 @@ export const siteConfig = {
   ],
   socials: {
     youtube: "https://youtube.com/@astraparallax",
-    pinterest: "https://pinterest.com/astraparallax",
+    pinterest: "https://www.pinterest.com/astraparallax21/",
     instagram: "https://instagram.com/astraparallax",
     x: "https://x.com/astraparallax",
-    email: "hello@astraparallax.example"
+    email: "aarushdestroyer@gmail.com"
   }
 } as const;
 

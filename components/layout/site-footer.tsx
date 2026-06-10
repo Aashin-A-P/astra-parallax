@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/lib/site";
 import { NewsletterForm } from "@/components/newsletter/newsletter-form";
 
@@ -7,7 +8,12 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-background-soft">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
         <div>
-          <div className="font-display text-xl font-semibold">{siteConfig.name}</div>
+          <div className="flex items-center gap-3 font-display text-xl font-semibold">
+            <span className="relative h-10 w-10 overflow-hidden rounded-full border border-primary/35 bg-background shadow-glow">
+              <Image src="/icons/astra-icon.png" alt="" fill sizes="40px" className="object-cover" />
+            </span>
+            <span className="text-metallic">{siteConfig.name}</span>
+          </div>
           <p className="mt-3 max-w-sm text-sm leading-6 text-muted">{siteConfig.tagline}</p>
           <p className="mt-5 text-xs leading-5 text-muted-alt">
             Affiliate note: some resource links may earn a commission while keeping recommendations editorially independent.

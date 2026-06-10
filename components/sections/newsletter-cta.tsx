@@ -13,7 +13,7 @@ export function NewsletterCta() {
             Get new articles, recommended tools, project notes, and future product drops from Astra Parallax.
           </p>
         </div>
-        <div className="rounded-2xl border border-border bg-surface p-5 shadow-[0_18px_60px_rgba(15,23,42,0.08)]">
+        <div className="rounded-2xl border border-primary/25 bg-surface/90 p-5 shadow-glow backdrop-blur">
           <NewsletterForm />
         </div>
       </div>

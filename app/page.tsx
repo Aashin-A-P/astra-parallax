@@ -70,7 +70,7 @@ export default function HomePage() {
             {(featuredPosts.length ? featuredPosts : latestPosts).length ? (
               (featuredPosts.length ? featuredPosts : latestPosts).slice(0, 4).map((post) => <ArticleCard key={post.slug} post={post} />)
             ) : (
-              <div className="rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_rgba(15,23,42,0.07)] md:col-span-2">
+              <div className="rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)] md:col-span-2">
                 No blog posts yet. Add real articles in <code className="rounded bg-background-soft px-1.5 py-0.5">content/posts</code>.
               </div>
             )}
@@ -82,7 +82,7 @@ export default function HomePage() {
             {resources.length ? (
               resources.map((resource) => <ResourceCard key={resource.slug} resource={resource} />)
             ) : (
-              <div className="rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_rgba(15,23,42,0.07)]">
+              <div className="rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)]">
                 No resources yet. Add real store resources in <code className="rounded bg-background-soft px-1.5 py-0.5">content/resources</code>.
               </div>
             )}

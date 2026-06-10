@@ -33,7 +33,7 @@ export function SearchPageClient({ items }: { items: SearchItem[] }) {
           </Link>
         ))}
         {!items.length ? (
-          <div className="rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_rgba(15,23,42,0.07)]">
+          <div className="rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)]">
             No searchable content is published yet.
           </div>
         ) : null}

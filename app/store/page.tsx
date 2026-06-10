@@ -37,7 +37,7 @@ export default function StorePage() {
                 ))}
               </div>
             ) : (
-              <div className="mt-8 rounded-2xl border border-border bg-surface p-8 shadow-[0_16px_48px_rgba(15,23,42,0.07)]">
+              <div className="mt-8 rounded-2xl border border-border bg-surface p-8 shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)]">
                 <Badge>No store items yet</Badge>
                 <h3 className="mt-4 font-display text-2xl font-bold tracking-tight">Your store is ready for real resources.</h3>
                 <p className="mt-3 max-w-2xl text-muted">

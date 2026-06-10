@@ -17,8 +17,8 @@ const displayFont = Sora({ subsets: ["latin"], variable: "--font-display", weigh
 export const metadata: Metadata = buildMetadata();
 
 export const viewport: Viewport = {
-  themeColor: "#FFFBF5",
-  colorScheme: "light"
+  themeColor: "#030409",
+  colorScheme: "dark light"
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${bodyFont.variable} ${displayFont.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light" enableSystem={false}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <a href="#main" className="skip-link">
             Skip to content
           </a>

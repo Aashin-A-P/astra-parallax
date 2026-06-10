@@ -48,7 +48,7 @@ export default function ResourcesPage() {
               ))}
             </div>
           ) : (
-            <div className="mt-8 rounded-2xl border border-border bg-surface p-8 text-muted shadow-[0_16px_48px_rgba(15,23,42,0.07)]">
+            <div className="mt-8 rounded-2xl border border-border bg-surface p-8 text-muted shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)]">
               No resources are published yet.
             </div>
           )}
