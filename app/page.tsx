@@ -1,152 +1,141 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Brush, Flame, PlayCircle, Shield, Telescope } from "lucide-react";
-import { ArticleCard } from "@/components/cards/article-card";
-import { ResourceCard } from "@/components/cards/resource-card";
-import { HeroSection } from "@/components/sections/hero-section";
-import { MissionPanel } from "@/components/sections/mission-panel";
-import { NewsletterCta } from "@/components/sections/newsletter-cta";
-import { SectionHeader } from "@/components/sections/section-header";
-import { SignalPathCard } from "@/components/sections/signal-path-card";
-import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Brush, Images, Instagram, PackageOpen, PenLine, Sparkles, Store } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AnimatedReveal } from "@/components/visual/animated-reveal";
-import { StarfieldBackground } from "@/components/visual/starfield-background";
-import { getAllCategories, getAllPosts, getAllResources, getFeaturedPosts } from "@/lib/content";
+import { siteConfig } from "@/lib/site";
+
+const pillars = [
+  {
+    href: "/content",
+    title: "Content",
+    eyebrow: "Instagram stories",
+    description: "A clean archive for story drops, post themes, captions, visual notes, and the short pieces you publish on Instagram.",
+    icon: Instagram
+  },
+  {
+    href: "/design",
+    title: "Design",
+    eyebrow: "Artwork and studies",
+    description: "Finished art, poster directions, surface patterns, typography tests, and design experiments built for visual collections.",
+    icon: Brush
+  },
+  {
+    href: "/studio",
+    title: "Studio",
+    eyebrow: "POD and affiliate shop",
+    description: "Product showcases for Redbubble, print-on-demand collections, mockups, affiliate picks, and shop-ready releases.",
+    icon: Store
+  }
+];
+
+const studioNotes = [
+  { icon: PenLine, label: "Story-first content" },
+  { icon: Images, label: "Design-led collections" },
+  { icon: PackageOpen, label: "Print-on-demand products" }
+];
 
 export default function HomePage() {
-  const categories = getAllCategories();
-  const featuredPosts = getFeaturedPosts();
-  const latestPosts = getAllPosts().slice(0, 3);
-  const resources = getAllResources().filter((resource) => resource.featured).slice(0, 3);
-
   return (
     <>
-      <HeroSection />
-      <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
-        <div className="noise-overlay absolute inset-0 opacity-30" />
-        <div className="relative mx-auto max-w-7xl">
-          <SectionHeader
-            eyebrow="Astra Parallax"
-            title="A professional home for every creative direction."
-            description="Content, blog writing, AI workflows, design work, websites, print-on-demand concepts, and curated resources are organized into a clear visitor journey."
-          />
-          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {categories.map((category, index) => (
-              <AnimatedReveal key={category.slug}>
-                <SignalPathCard category={category} index={index} />
-              </AnimatedReveal>
+      <section className="relative overflow-hidden border-b border-border bg-background">
+        <div className="relative h-[42vh] min-h-[320px] overflow-hidden sm:h-[52vh] lg:h-[620px]">
+          <Image src="/images/astra-cover.png" alt="Astra Parallax banner with ink pens, brushes, gold accents, and AP monogram" fill priority sizes="100vw" className="object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-transparent to-background" />
+        </div>
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-10 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-20">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-surface/80 px-4 py-2 text-sm font-semibold text-primary-soft shadow-sm">
+              <Sparkles className="h-4 w-4" />
+              Create - Inspire - Design
+            </div>
+            <h1 className="mt-6 max-w-4xl font-display text-4xl font-extrabold leading-[1.04] text-metallic sm:text-5xl lg:text-7xl">
+              Astra Parallax is now a design and print-on-demand studio.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
+              A focused home for Instagram stories, original artwork, Redbubble products, and curated affiliate links. Three sections keep the experience simple: Content, Design, and Studio.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg">
+                <Link href="/studio">
+                  View Studio <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="secondary">
+                <Link href="/design">Explore Design</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="grid content-start gap-3 sm:grid-cols-3 lg:grid-cols-1">
+            {studioNotes.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.label} className="flex min-h-[88px] items-center gap-4 rounded-md border border-border bg-surface/82 p-4 shadow-[0_18px_50px_hsl(var(--foreground)_/_0.08)]">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-primary/12 text-primary-soft">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <span className="font-display text-base font-semibold text-foreground">{item.label}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">Three tabs</p>
+          <h2 className="mt-3 font-display text-3xl font-bold text-foreground sm:text-4xl">Everything points to publishing, portfolio, and product sales.</h2>
+        </div>
+        <div className="mt-9 grid gap-5 md:grid-cols-3">
+          {pillars.map((pillar) => {
+            const Icon = pillar.icon;
+            return (
+              <Link
+                key={pillar.href}
+                href={pillar.href}
+                className="group rounded-md border border-border bg-surface p-6 shadow-[0_18px_55px_hsl(var(--foreground)_/_0.08)] transition hover:-translate-y-1 hover:border-primary/45 hover:shadow-[0_24px_70px_hsl(var(--foreground)_/_0.12)]"
+              >
+                <div className="flex items-center justify-between gap-4">
+                  <span className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-soft">{pillar.eyebrow}</span>
+                  <span className="grid h-10 w-10 place-items-center rounded-full bg-primary/12 text-primary-soft transition group-hover:bg-primary group-hover:text-background">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                </div>
+                <h3 className="mt-7 font-display text-2xl font-bold text-foreground">{pillar.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-muted">{pillar.description}</p>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary-soft">
+                  Open {pillar.title} <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-background-soft/65 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">Sales path</p>
+            <h2 className="mt-3 font-display text-3xl font-bold text-foreground sm:text-4xl">From story idea to product page.</h2>
+            <p className="mt-4 max-w-xl text-muted">
+              The site is shaped for a practical creative loop: publish visual stories, develop the strongest ideas into artwork, then showcase product-ready designs through POD and affiliate links.
+            </p>
+          </div>
+          <div className="grid gap-3">
+            {["Post stories and visual notes on Instagram", "Build artwork, patterns, and design collections", "Showcase Redbubble products and affiliate picks"].map((step, index) => (
+              <div key={step} className="flex items-center gap-4 rounded-md border border-border bg-surface/86 p-4">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-foreground text-sm font-bold text-background">{index + 1}</span>
+                <span className="font-medium text-foreground">{step}</span>
+              </div>
             ))}
           </div>
         </div>
       </section>
-      <section className="relative overflow-hidden border-y border-border bg-background-soft/60 px-4 py-20 sm:px-6 lg:px-8">
-        <StarfieldBackground className="opacity-70" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <SectionHeader
-              eyebrow="Operating base"
-              title="Built as a long-term digital studio and publishing base."
-              description="The site is structured to grow with new videos, articles, design releases, websites, store collections, affiliate resources, and audience updates."
-            />
-            <Button asChild className="mt-7" variant="secondary">
-              <Link href="/blog">
-                Read the blog <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-          <MissionPanel />
-        </div>
-      </section>
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
-        <div>
-          <div className="mb-8 flex items-end justify-between gap-4">
-            <SectionHeader eyebrow="Blog" title="Latest writing and articles." />
-            <Button asChild variant="link">
-              <Link href="/blog">View blog</Link>
-            </Button>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            {(featuredPosts.length ? featuredPosts : latestPosts).length ? (
-              (featuredPosts.length ? featuredPosts : latestPosts).slice(0, 4).map((post) => <ArticleCard key={post.slug} post={post} />)
-            ) : (
-              <div className="rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)] md:col-span-2">
-                The blog archive is being prepared. New writing will appear here as soon as publication begins.
-              </div>
-            )}
-          </div>
-        </div>
-        <div>
-          <SectionHeader eyebrow="Store picks" title="Featured resources." />
-          <div className="grid gap-4">
-            {resources.length ? (
-              resources.map((resource) => <ResourceCard key={resource.slug} resource={resource} />)
-            ) : (
-              <div className="rounded-2xl border border-border bg-surface p-6 text-muted shadow-[0_16px_48px_hsl(var(--foreground)_/_0.08)]">
-                Store showcases are being curated. Featured resources and product links will appear here after review.
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-      <section className="relative overflow-hidden border-y border-border bg-background-soft/70">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(103,232,249,0.16),transparent_20rem),radial-gradient(circle_at_80%_70%,rgba(167,139,250,0.18),transparent_24rem)]" />
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="relative">
-            <Badge>Audience path</Badge>
-            <h2 className="mt-3 font-display text-3xl font-semibold">Turn platform discovery into a clear destination.</h2>
-            <p className="mt-4 text-muted">
-              Connect YouTube, Instagram, Pinterest, blog notes, design work, store resources, and newsletter updates through a website people can understand quickly.
-            </p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {[
-                { icon: Telescope, text: "Mystery, facts, and tech content" },
-                { icon: Shield, text: "Owned audience capture" },
-                { icon: Brush, text: "Design and website portfolio" },
-                { icon: Flame, text: "Store and affiliate pathway" }
-              ].map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.text} className="flex items-center gap-3 rounded-md border border-border bg-background/55 p-3 text-sm text-muted backdrop-blur">
-                    <Icon className="h-4 w-4 text-primary-soft" />
-                    {item.text}
-                  </div>
-                );
-              })}
-            </div>
-            <Button asChild className="mt-6" variant="secondary">
-              <Link href="/studio">
-                Explore studio <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-          <Card className="relative overflow-hidden bg-background/70 backdrop-blur">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <PlayCircle className="h-5 w-5 text-primary-soft" />
-                Channel hub
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-3">
-                {["YouTube", "Instagram", "Pinterest", "Newsletter"].map((channel) => (
-                  <div key={channel} className="flex items-center justify-between rounded-xl border border-border bg-surface px-4 py-3 text-sm font-semibold">
-                    <span>{channel}</span>
-                    <span className="text-muted-alt">Ready to connect</span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-      <NewsletterCta />
-      <section className="relative mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
-        <Badge>Starting point</Badge>
-        <h2 className="mx-auto mt-4 max-w-3xl font-display text-4xl font-semibold text-cosmic">Astra Parallax is designed to grow with every release.</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-muted">
-          Each section is prepared for real work: videos, articles, designs, websites, product collections, recommended tools, and audience updates.
-        </p>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8">
+        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">{siteConfig.name}</p>
+        <h2 className="mx-auto mt-3 max-w-3xl font-display text-3xl font-bold text-foreground sm:text-4xl">A warmer, simpler website for design-led selling.</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-muted">{siteConfig.tagline}</p>
       </section>
     </>
   );

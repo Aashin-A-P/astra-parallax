@@ -1,11 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Mail, Pin, Youtube, MessageCircle } from "lucide-react";
+import { Instagram, Mail, MessageCircle, Pin } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { NewsletterForm } from "@/components/newsletter/newsletter-form";
 
 const socialLinks = [
-  { key: "youtube", label: "YouTube", icon: Youtube },
   { key: "pinterest", label: "Pinterest", icon: Pin },
   { key: "instagram", label: "Instagram", icon: Instagram },
   { key: "x", label: "X", icon: MessageCircle },
@@ -19,14 +18,12 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-3 font-display text-xl font-semibold">
             <span className="relative h-10 w-10 overflow-hidden rounded-full border border-primary/35 bg-background shadow-glow">
-              <Image src="/icons/astra-icon.png" alt="" fill sizes="40px" className="object-cover" />
+              <Image src="/logo-mark.svg" alt="" fill sizes="40px" className="object-cover" />
             </span>
             <span className="text-metallic">{siteConfig.name}</span>
           </div>
           <p className="mt-3 max-w-sm text-sm leading-6 text-muted">{siteConfig.tagline}</p>
-          <p className="mt-5 text-xs leading-5 text-muted-alt">
-            Affiliate note: some resource links may earn a commission while keeping recommendations editorially independent.
-          </p>
+          <p className="mt-5 text-xs leading-5 text-muted-alt">{siteConfig.shops.affiliateDisclosure}</p>
         </div>
         <div className="grid grid-cols-2 gap-8 text-sm">
           <div>
@@ -66,7 +63,7 @@ export function SiteFooter() {
         </div>
         <div>
           <h2 className="font-medium text-foreground">Join the Dispatch</h2>
-          <p className="mt-2 text-sm text-muted">Essays, resources, and product notes.</p>
+          <p className="mt-2 text-sm text-muted">Story drops, design releases, and product notes.</p>
           <div className="mt-4">
             <NewsletterForm compact />
           </div>

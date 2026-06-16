@@ -23,7 +23,7 @@ export function OrbitalGlow() {
       <div className="absolute left-1/2 top-1/2 grid h-44 w-44 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-[2rem] border border-border bg-surface/90 shadow-glow backdrop-blur">
         <div className="text-center">
           <div className="relative mx-auto h-14 w-14 overflow-hidden rounded-full border border-primary/30 bg-background">
-            <Image src="/icons/astra-icon.png" alt="" fill sizes="56px" className="object-cover" />
+            <Image src="/logo-mark.svg" alt="" fill sizes="56px" className="object-cover" />
           </div>
           <div className="mt-3 font-display text-2xl font-semibold text-metallic">Astra</div>
           <div className="mt-1 text-xs uppercase tracking-[0.24em] text-muted">Explore</div>

@@ -16,7 +16,7 @@ export function SiteHeader({ searchItems }: { searchItems: SearchItem[] }) {
       <div className="mx-auto flex h-[72px] max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3 font-display text-lg font-extrabold tracking-tight sm:text-xl">
           <span className="relative h-11 w-11 overflow-hidden rounded-full border border-primary/40 bg-background shadow-glow">
-            <Image src="/icons/astra-icon.png" alt="" fill sizes="44px" className="object-cover" priority />
+            <Image src="/logo-mark.svg" alt="" fill sizes="44px" className="object-cover" priority />
           </span>
           <span className="text-metallic">Astra Parallax</span>
         </Link>

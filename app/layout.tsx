@@ -17,7 +17,7 @@ const displayFont = Sora({ subsets: ["latin"], variable: "--font-display", weigh
 export const metadata: Metadata = buildMetadata();
 
 export const viewport: Viewport = {
-  themeColor: "#030409",
+  themeColor: "#f8ead0",
   colorScheme: "dark light"
 };
 

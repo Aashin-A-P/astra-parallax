@@ -1,6 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title">
-  <title id="title">Astra Parallax mark</title>
-  <rect width="128" height="128" rx="18" fill="#030409"/>
-  <path d="M64 18 96 104 64 86 32 104 64 18Z" fill="#F6EBDD"/>
-  <path d="M64 38 80 83 64 74 48 83 64 38Z" fill="#030409"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Astra Parallax AP logo</title>
+  <desc id="desc">Warm circular AP monogram with brush, pen, leaf, and create inspire design tagline.</desc>
+  <defs>
+    <radialGradient id="paper" cx="50%" cy="42%" r="64%">
+      <stop offset="0%" stop-color="#fff8ec"/>
+      <stop offset="58%" stop-color="#f8ead0"/>
+      <stop offset="100%" stop-color="#efd7aa"/>
+    </radialGradient>
+    <linearGradient id="ink" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#7b4b17"/>
+      <stop offset="52%" stop-color="#2b1708"/>
+      <stop offset="100%" stop-color="#a86b22"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f1c46f"/>
+      <stop offset="50%" stop-color="#a96c1e"/>
+      <stop offset="100%" stop-color="#5d340e"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#5d340e" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <circle cx="512" cy="512" r="498" fill="#fffdf9"/>
+  <circle cx="512" cy="512" r="488" fill="url(#paper)"/>
+
+  <g fill="none" stroke-linecap="round" filter="url(#softShadow)">
+    <path d="M318 164C418 94 596 79 738 164c82 49 139 122 164 207" stroke="url(#ink)" stroke-width="15"/>
+    <path d="M243 760C161 642 155 480 226 350" stroke="url(#gold)" stroke-width="10"/>
+    <path d="M188 676C273 828 481 870 659 819c108-31 196-101 247-190" stroke="url(#ink)" stroke-width="16"/>
+    <path d="M719 143c132 78 198 201 191 338" stroke="url(#gold)" stroke-width="8"/>
+  </g>
+
+  <g fill="url(#ink)" filter="url(#softShadow)">
+    <text x="404" y="552" font-family="Georgia, 'Times New Roman', serif" font-size="470" font-weight="400" text-anchor="middle">A</text>
+    <text x="607" y="690" font-family="Georgia, 'Times New Roman', serif" font-size="430" font-weight="400" text-anchor="middle">P</text>
+  </g>
+
+  <g fill="url(#gold)">
+    <path d="M653 224l22 48 48 22-48 22-22 48-22-48-48-22 48-22z"/>
+    <path d="M822 562l7 14 14 7-14 7-7 14-7-14-14-7 14-7z"/>
+    <circle cx="270" cy="173" r="10"/>
+    <circle cx="245" cy="205" r="7"/>
+    <circle cx="222" cy="235" r="5"/>
+    <circle cx="846" cy="460" r="5"/>
+  </g>
+
+  <g fill="none" stroke="#72633c" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M162 522c22-95 54-166 121-218" stroke-width="8"/>
+    <path d="M174 475c-34-28-41-72-27-109 32 21 48 59 27 109z" fill="#9d9362" stroke-width="4"/>
+    <path d="M213 408c-15-38-3-75 31-101 16 36 6 73-31 101z" fill="#9d9362" stroke-width="4"/>
+    <path d="M230 348c-3-36 19-66 57-78 5 35-16 64-57 78z" fill="#9d9362" stroke-width="4"/>
+    <path d="M201 548c-10 15-33 18-49 8 13-18 34-22 49-8z" fill="#9d9362" stroke-width="4"/>
+  </g>
+
+  <g transform="translate(118 628) rotate(-32)">
+    <path d="M0 128c62-50 122-96 180-139" fill="none" stroke="url(#ink)" stroke-width="24" stroke-linecap="round"/>
+    <path d="M176-18l40 64-75 17z" fill="url(#ink)"/>
+    <circle cx="169" cy="29" r="10" fill="#fff8ec"/>
+    <path d="M118 77l38 58" stroke="#fff8ec" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(816 643) rotate(34)">
+    <path d="M0 176c31-86 73-148 126-197" fill="none" stroke="url(#ink)" stroke-width="24" stroke-linecap="round"/>
+    <path d="M118-42c44 56 35 113-13 154-30-60-25-108 13-154z" fill="url(#ink)"/>
+    <path d="M106-13c22 38 18 71-10 98" fill="none" stroke="#a86b22" stroke-width="7" stroke-linecap="round"/>
+    <path d="M36 118l42 17" stroke="#f4d29a" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <g fill="url(#ink)" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="512" y="884" font-size="39" letter-spacing="13">CREATE • INSPIRE • DESIGN</text>
+    <circle cx="383" cy="928" r="6"/>
+    <path d="M407 928h92" stroke="#a96c1e" stroke-width="4" stroke-linecap="round"/>
+    <text x="512" y="944" font-size="42">♥</text>
+    <path d="M525 928h92" stroke="#a96c1e" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="641" cy="928" r="6"/>
+  </g>
 </svg>
