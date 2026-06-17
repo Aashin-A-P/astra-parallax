@@ -58,9 +58,9 @@ export default function StudioPage() {
           </div>
           <div className="rounded-md border border-border bg-surface/86 p-6 shadow-[0_18px_55px_hsl(var(--foreground)_/_0.08)]">
             <Store className="h-8 w-8 text-primary-soft" />
-            <h2 className="mt-5 font-display text-2xl font-bold text-foreground">Shop notes</h2>
+            <h2 className="mt-5 font-display text-2xl font-bold text-foreground">Studio Picks</h2>
             <p className="mt-3 text-sm leading-6 text-muted">
-              The main Studio button opens your Redbubble shop. Each design below has its own Astra Parallax landing page that you can attach to Pinterest pins before sending visitors to the exact Redbubble product.
+              Explore featured artwork across apparel, decor, stationery, stickers, and creator-friendly product picks.
             </p>
             <p className="mt-5 rounded-md border border-border bg-background-soft/70 p-4 text-sm text-muted">{siteConfig.shops.affiliateDisclosure}</p>
           </div>
@@ -72,35 +72,39 @@ export default function StudioPage() {
           <div>
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">New Design</p>
-              <h2 className="mt-3 font-display text-3xl font-bold text-foreground">Featured Redbubble product page.</h2>
+              <h2 className="mt-3 font-display text-3xl font-bold text-foreground">Featured Redbubble product pages.</h2>
             </div>
           </div>
-          <div className="mt-7 grid overflow-hidden rounded-md border border-border bg-surface shadow-[0_18px_55px_hsl(var(--foreground)_/_0.08)] lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="relative min-h-[320px] bg-background-soft">
-              <Image src={studioProducts[0].mockups[1].url} alt={studioProducts[0].mockups[1].alt} fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
-            </div>
-            <div className="p-7 lg:p-9">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-soft">{studioProducts[0].category}</p>
-              <h3 className="mt-3 font-display text-3xl font-bold text-foreground">{studioProducts[0].title}</h3>
-              <p className="mt-4 text-muted">{studioProducts[0].description}</p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {studioProducts[0].tags.slice(0, 4).map((tag) => (
-                  <span key={tag} className="rounded-full border border-border bg-background-soft px-3 py-1 text-xs font-semibold text-muted">
-                    {tag}
-                  </span>
-                ))}
+          <div className="mt-7 grid gap-6">
+            {studioProducts.map((product) => (
+              <div key={product.slug} className="grid overflow-hidden rounded-md border border-border bg-surface shadow-[0_18px_55px_hsl(var(--foreground)_/_0.08)] lg:grid-cols-[0.9fr_1.1fr]">
+                <div className="relative min-h-[320px] bg-background-soft">
+                  <Image src={product.mockups[1].url} alt={product.mockups[1].alt} fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
+                </div>
+                <div className="p-7 lg:p-9">
+                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-soft">{product.category}</p>
+                  <h3 className="mt-3 font-display text-3xl font-bold text-foreground">{product.title}</h3>
+                  <p className="mt-4 text-muted">{product.description}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {product.tags.slice(0, 4).map((tag) => (
+                      <span key={tag} className="rounded-full border border-border bg-background-soft px-3 py-1 text-xs font-semibold text-muted">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                    <Button asChild>
+                      <Link href={`/studio/${product.slug}`}>Open product page</Link>
+                    </Button>
+                    <Button asChild variant="secondary">
+                      <a href={product.sourceUrl} target="_blank" rel="noreferrer">
+                        Buy on Redbubble <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
               </div>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <Button asChild>
-                  <Link href={`/studio/${studioProducts[0].slug}`}>Open product page</Link>
-                </Button>
-                <Button asChild variant="secondary">
-                  <a href={studioProducts[0].sourceUrl} target="_blank" rel="noreferrer">
-                    Buy on Redbubble <ArrowUpRight className="h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -121,10 +125,10 @@ export default function StudioPage() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">Product Links</p>
-            <h2 className="mt-3 font-display text-3xl font-bold text-foreground">Shareable landing pages for every design.</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">Product Pages</p>
+            <h2 className="mt-3 font-display text-3xl font-bold text-foreground">Browse each featured design in detail.</h2>
             <p className="mt-4 text-muted">
-              Add new designs to the Studio product list, and each one can get a clean URL in the same pattern: `/studio/product-name`.
+              Open a product page to view mockups, product types, design notes, and the direct Redbubble listing.
             </p>
           </div>
           <div className="grid gap-3">

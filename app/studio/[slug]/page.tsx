@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, CheckCircle2, Heart, PackageOpen, Sparkles, Tag } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Heart, Sparkles, Tag } from "lucide-react";
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -84,14 +84,14 @@ export default async function StudioProductPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">Pinterest Landing Page</p>
-          <h2 className="mt-3 font-display text-3xl font-bold text-foreground">Use this page as the clean link behind pins.</h2>
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">Design Details</p>
+          <h2 className="mt-3 font-display text-3xl font-bold text-foreground">A closer look at the artwork and product range.</h2>
           <p className="mt-4 text-muted">{product.description}</p>
-          <div className="mt-7 grid gap-3">
+          <div className="mt-7 flex flex-wrap gap-3">
             {product.tags.map((tag) => (
-              <div key={tag} className="flex items-center gap-3 rounded-md border border-border bg-surface p-3 text-sm font-medium text-foreground">
+              <div key={tag} className="flex items-center gap-3 rounded-md border border-border bg-surface px-4 py-3 text-sm font-medium text-foreground">
                 <Tag className="h-4 w-4 text-primary-soft" />
                 {tag}
               </div>
@@ -99,31 +99,37 @@ export default async function StudioProductPage({ params }: PageProps) {
           </div>
         </div>
 
-        <div>
-          <div className="grid gap-5 md:grid-cols-2">
-            {product.mockups.map((mockup) => (
-              <figure key={mockup.title} className="overflow-hidden rounded-md border border-border bg-surface shadow-[0_18px_55px_hsl(var(--foreground)_/_0.08)]">
-                <div className="relative aspect-square bg-background-soft">
-                  <Image src={mockup.url} alt={mockup.alt} fill sizes="(min-width: 768px) 34vw, 100vw" className="object-cover" />
-                </div>
-                <figcaption className="border-t border-border p-4 text-sm font-semibold text-foreground">{mockup.title}</figcaption>
-              </figure>
-            ))}
+        <div className="mt-12">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">Shop The Design</p>
+              <h2 className="mt-3 font-display text-3xl font-bold text-foreground">Available product formats.</h2>
+            </div>
+            <p className="text-sm font-semibold text-muted">{product.productCount}</p>
           </div>
 
-          <div className="mt-6 rounded-md border border-border bg-background-soft/72 p-6">
-            <div className="flex items-center gap-3">
-              <PackageOpen className="h-5 w-5 text-primary-soft" />
-              <h2 className="font-display text-xl font-bold text-foreground">Available Product Types</h2>
-            </div>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {product.availableOn.map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-muted">
-                  <CheckCircle2 className="h-4 w-4 text-primary-soft" />
-                  {item}
+          <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {product.mockups.map((mockup) => (
+              <article key={mockup.title} className="group overflow-hidden rounded-md border border-border bg-surface shadow-[0_18px_55px_hsl(var(--foreground)_/_0.08)] transition hover:-translate-y-0.5 hover:border-primary/45 hover:bg-surface-alt">
+                <div className="relative aspect-square bg-background-soft">
+                  <Image src={mockup.url} alt={mockup.alt} fill sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw" className="object-cover transition duration-300 group-hover:scale-[1.03]" />
                 </div>
-              ))}
-            </div>
+                <div className="border-t border-border p-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="font-display text-lg font-bold text-foreground">{mockup.title}</h3>
+                      <p className="mt-1 text-sm text-muted">{product.priceNote}</p>
+                    </div>
+                    <Tag className="mt-1 h-4 w-4 shrink-0 text-primary-soft" />
+                  </div>
+                  <Button asChild className="mt-4 w-full" variant="secondary">
+                    <a href={product.sourceUrl} target="_blank" rel="noreferrer">
+                      View on Redbubble <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -135,7 +141,7 @@ export default async function StudioProductPage({ params }: PageProps) {
               <Heart className="h-4 w-4" />
               Cozy Gift Pick
             </div>
-            <h2 className="mt-3 font-display text-3xl font-bold text-foreground">A product landing page made for social traffic.</h2>
+            <h2 className="mt-3 font-display text-3xl font-bold text-foreground">Pick the format that fits your space, style, or gift list.</h2>
           </div>
           <Button asChild size="lg">
             <a href={product.sourceUrl} target="_blank" rel="noreferrer">
