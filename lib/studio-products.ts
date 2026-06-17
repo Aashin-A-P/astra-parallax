@@ -11,7 +11,7 @@ export const studioProducts = [
     summary:
       "Two teddy bears share a quiet reading moment beneath a blanket fort, surrounded by books, warm lights, cookies, and cozy details.",
     description:
-      "A soft, heartwarming design for book lovers, couples, cozy aesthetic fans, and anyone who likes gentle illustrated products with a warm storybook mood.",
+      "A soft, heartwarming artwork for book lovers, couples, cozy aesthetic fans, and anyone who likes gentle illustrated products with a warm storybook mood.",
     tags: ["book lovers", "cozy aesthetic", "teddy bear couple", "reading together", "romantic gift", "cute animals"],
     mockups: [
       {
@@ -76,7 +76,7 @@ export const studioProducts = [
     summary:
       "Dudu and Bubu share warm drinks under a soft blanket, turning a rainy day into a cozy moment together.",
     description:
-      "A sweet kawaii-style design for couples, coffee lovers, cozy home decor fans, and anyone who likes gentle illustrated gifts with a warm rainy-day mood.",
+      "A sweet kawaii-style artwork for couples, coffee lovers, cozy home decor fans, and anyone who likes gentle illustrated gifts with a warm rainy-day mood.",
     tags: ["cute couple bears", "rainy days", "cozy couple", "romantic bears", "coffee lovers", "kawaii bears"],
     mockups: [
       {
@@ -141,7 +141,7 @@ export const studioProducts = [
     summary:
       "Two adorable bears share a soft blanket and warm drinks, making a rainy day feel calm, cozy, and loved.",
     description:
-      "A heartwarming rainy-day design for couples, coffee lovers, cozy home decor fans, and anyone who enjoys sweet illustrated gifts about love, comfort, and companionship.",
+      "A heartwarming rainy-day artwork for couples, coffee lovers, cozy home decor fans, and anyone who enjoys sweet illustrated gifts about love, comfort, and companionship.",
     tags: ["cute couple bears", "rainy days", "cozy couple", "coffee lovers", "kawaii bears", "wholesome love"],
     mockups: [
       {

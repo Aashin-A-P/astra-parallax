@@ -17,7 +17,7 @@ const contentTypes = [
   {
     icon: NotebookPen,
     title: "Post Notes",
-    description: "Caption ideas, post themes, carousel concepts, and behind-the-design notes for each release."
+    description: "Caption ideas, post themes, carousel concepts, and behind-the-scenes notes for each release."
   },
   {
     icon: CalendarDays,
@@ -39,7 +39,7 @@ export default function ContentPage() {
             Stories, captions, and Instagram-first ideas.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-            This tab is for the content you publish around Astra Parallax: story sequences, post concepts, captions, launch notes, and the small creative fragments that feed the design shop.
+            This tab is for the content you publish around Astra Parallax: story sequences, post concepts, captions, launch notes, and the small creative fragments that support product releases.
           </p>
         </div>
       </section>
@@ -65,7 +65,7 @@ export default function ContentPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">Archive Format</p>
             <h2 className="mt-3 font-display text-3xl font-bold text-foreground">Built for quick posting and clean browsing.</h2>
             <p className="mt-4 text-muted">
-              Each entry can hold the story title, visual theme, caption draft, Instagram link, product tie-in, and notes for turning a post into a future design.
+              Each entry can hold the story title, visual theme, caption draft, Instagram link, product tie-in, and notes for turning a post into a future release.
             </p>
           </div>
           <div className="grid gap-3">

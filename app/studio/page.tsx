@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, BadgePercent, ExternalLink, PackageOpen, Shirt, ShoppingBag, Store, Tag } from "lucide-react";
+import { ArrowUpRight, ExternalLink, PackageOpen, Shirt, Store, Tag } from "lucide-react";
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -9,7 +9,7 @@ import { studioProducts } from "@/lib/studio-products";
 
 export const metadata: Metadata = buildMetadata({
   title: "Studio",
-  description: "Astra Parallax studio for Redbubble print-on-demand products, product showcases, and affiliate links.",
+  description: "Astra Parallax studio for Redbubble print-on-demand products and product showcases.",
   path: "/studio"
 });
 
@@ -17,17 +17,12 @@ const productGroups = [
   {
     icon: Shirt,
     title: "Apparel",
-    description: "Graphic tees, hoodies, and wearable designs built from Astra Parallax artwork."
+    description: "Graphic tees, hoodies, and wearable products built from Astra Parallax artwork."
   },
   {
     icon: PackageOpen,
     title: "Home Goods",
-    description: "Prints, decor, stationery, stickers, and lifestyle products for design-led collections."
-  },
-  {
-    icon: ShoppingBag,
-    title: "Featured Picks",
-    description: "A curated area for best sellers, seasonal drops, and affiliate products that fit the studio mood."
+    description: "Prints, decor, stationery, stickers, and lifestyle products from Redbubble collections."
   }
 ];
 
@@ -40,10 +35,10 @@ export default function StudioPage() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">Studio</p>
             <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight text-metallic sm:text-6xl">
-              Product showcases for Redbubble and affiliate links.
+              Product showcases for Redbubble.
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-              Studio is the shop-facing tab. Use it to feature print-on-demand products, Redbubble collections, product mockups, affiliate recommendations, and clear calls to buy.
+              Studio is the shop-facing tab for Redbubble products, print-on-demand collections, product mockups, and clear calls to buy.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
@@ -51,18 +46,14 @@ export default function StudioPage() {
                   Redbubble Store <ArrowUpRight className="h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild size="lg" variant="secondary">
-                <Link href="/design">View Designs</Link>
-              </Button>
             </div>
           </div>
           <div className="rounded-md border border-border bg-surface/86 p-6 shadow-[0_18px_55px_hsl(var(--foreground)_/_0.08)]">
             <Store className="h-8 w-8 text-primary-soft" />
             <h2 className="mt-5 font-display text-2xl font-bold text-foreground">Studio Picks</h2>
             <p className="mt-3 text-sm leading-6 text-muted">
-              Explore featured artwork across apparel, decor, stationery, stickers, and creator-friendly product picks.
+              Explore featured Redbubble artwork across apparel, decor, stationery, stickers, and everyday products.
             </p>
-            <p className="mt-5 rounded-md border border-border bg-background-soft/70 p-4 text-sm text-muted">{siteConfig.shops.affiliateDisclosure}</p>
           </div>
         </div>
       </section>
@@ -71,7 +62,7 @@ export default function StudioPage() {
         <div className="mb-14">
           <div>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">New Design</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">New Product</p>
               <h2 className="mt-3 font-display text-3xl font-bold text-foreground">Featured Redbubble product pages.</h2>
             </div>
           </div>
@@ -108,7 +99,7 @@ export default function StudioPage() {
           </div>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2">
           {productGroups.map((group) => {
             const Icon = group.icon;
             return (
@@ -126,9 +117,9 @@ export default function StudioPage() {
         <div className="mt-12 grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">Product Pages</p>
-            <h2 className="mt-3 font-display text-3xl font-bold text-foreground">Browse each featured design in detail.</h2>
+            <h2 className="mt-3 font-display text-3xl font-bold text-foreground">Browse each featured product in detail.</h2>
             <p className="mt-4 text-muted">
-              Open a product page to view mockups, product types, design notes, and the direct Redbubble listing.
+              Open a product page to view mockups, product types, artwork notes, and the direct Redbubble listing.
             </p>
           </div>
           <div className="grid gap-3">
@@ -141,28 +132,6 @@ export default function StudioPage() {
                 <ExternalLink className="h-4 w-4 shrink-0 text-muted-alt" />
               </Link>
             ))}
-            <div className="flex items-center justify-between gap-4 rounded-md border border-border bg-surface p-4">
-              <span className="flex items-center gap-3 font-medium text-foreground">
-                <Tag className="h-4 w-4 text-primary-soft" />
-                Affiliate tools and supplies for creators
-              </span>
-              <ExternalLink className="h-4 w-4 shrink-0 text-muted-alt" />
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 rounded-md border border-border bg-background-soft/72 p-7">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <BadgePercent className="h-6 w-6 text-primary-soft" />
-              <h2 className="mt-4 font-display text-2xl font-bold text-foreground">Affiliate area</h2>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-muted">
-                Add art tools, mockup resources, creator supplies, POD platforms, and design products here with clear disclosure.
-              </p>
-            </div>
-            <Button asChild variant="secondary">
-              <Link href="/content">See Content</Link>
-            </Button>
           </div>
         </div>
       </section>

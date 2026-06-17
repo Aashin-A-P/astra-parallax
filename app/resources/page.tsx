@@ -26,7 +26,7 @@ export default function ResourcesPage() {
           <Badge>Resources</Badge>
           <h1 className="mt-4 max-w-3xl font-display text-5xl font-semibold text-cosmic">Curated resources for creative digital work.</h1>
           <p className="mt-4 max-w-2xl text-muted">
-            A selected library for software, research tools, design resources, publishing systems, and digital infrastructure.
+            A selected library for software, research tools, creative resources, publishing systems, and digital infrastructure.
           </p>
           <div className="max-w-3xl">
             <AffiliateDisclosure />

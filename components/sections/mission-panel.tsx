@@ -1,8 +1,8 @@
-import { Brain, Cpu, Palette, Zap } from "lucide-react";
+import { Brain, Cpu, PackageOpen, Zap } from "lucide-react";
 
 const items = [
   { icon: Brain, label: "Content", text: "Organize videos, reels, facts, notes, and articles around clear topics visitors can follow." },
-  { icon: Palette, label: "Design", text: "Create a professional place for visual design, websites, product concepts, and brand assets." },
+  { icon: PackageOpen, label: "Products", text: "Create a professional place for Redbubble products, print-on-demand concepts, and product notes." },
   { icon: Cpu, label: "AI Systems", text: "Document practical AI workflows that support research, creation, publishing, and digital products." },
   { icon: Zap, label: "Commerce", text: "Connect curated tools, affiliate resources, and print-on-demand collections through one trusted store." }
 ];

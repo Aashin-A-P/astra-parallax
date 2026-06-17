@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
   title: "Blog",
-  description: "Read Astra Parallax blog posts across curiosity, technology, AI, design, content creation, and digital growth.",
+  description: "Read Astra Parallax blog posts across curiosity, technology, AI, content creation, products, and digital growth.",
   path: "/blog"
 });
 

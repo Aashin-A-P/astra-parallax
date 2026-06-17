@@ -10,7 +10,7 @@ export function NewsletterCta() {
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">The Dispatch</p>
           <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-tight">Stay connected with Astra Parallax.</h2>
           <p className="mt-4 max-w-2xl text-muted">
-            Receive selected updates on new content, design releases, useful tools, store additions, and behind-the-scenes progress.
+            Receive selected updates on new content, product releases, useful tools, store additions, and behind-the-scenes progress.
           </p>
         </div>
         <div className="rounded-2xl border border-primary/25 bg-surface/90 p-5 shadow-glow backdrop-blur">

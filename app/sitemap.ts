@@ -4,7 +4,7 @@ import { studioProducts } from "@/lib/studio-products";
 import { absoluteUrl } from "@/lib/utils";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/content", "/design", "/studio", "/search"];
+  const staticRoutes = ["", "/content", "/studio", "/affiliate", "/search"];
   return [
     ...staticRoutes.map((route) => ({ url: absoluteUrl(route), lastModified: new Date() })),
     ...studioProducts.map((product) => ({ url: absoluteUrl(`/studio/${product.slug}`), lastModified: new Date() })),

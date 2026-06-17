@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Astra Parallax",
-  tagline: "Create, inspire, design. Stories, artwork, and print-on-demand collections from an independent visual studio.",
+  tagline: "Stories, Redbubble products, and curated affiliate picks from Astra Parallax.",
   description:
-    "Astra Parallax is an independent design and print-on-demand studio for Instagram stories, artwork, Redbubble collections, and curated affiliate product links.",
-  defaultTitle: "Astra Parallax - Content, Design, and Print-on-Demand Studio",
+    "Astra Parallax is an independent creative hub for Instagram stories, Redbubble collections, and curated affiliate product links.",
+  defaultTitle: "Astra Parallax - Content, Redbubble, and Affiliate Picks",
   url: process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "http://localhost:3000",
   ogImage: "/og/default-og.svg",
   categories: [
@@ -20,7 +20,7 @@ export const siteConfig = {
     {
       slug: "productivity",
       name: "Creative Systems",
-      description: "Repeatable workflows for content planning, publishing, research, design, and audience growth."
+      description: "Repeatable workflows for content planning, publishing, research, and audience growth."
     },
     {
       slug: "ai",
@@ -30,8 +30,8 @@ export const siteConfig = {
   ],
   nav: [
     { href: "/content", label: "Content" },
-    { href: "/design", label: "Design" },
-    { href: "/studio", label: "Studio" }
+    { href: "/studio", label: "Studio" },
+    { href: "/affiliate", label: "Affiliate" }
   ],
   shops: {
     redbubble: "https://Astra-Parallax.redbubble.com",

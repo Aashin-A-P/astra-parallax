@@ -63,7 +63,7 @@ export function SiteFooter() {
         </div>
         <div>
           <h2 className="font-medium text-foreground">Join the Dispatch</h2>
-          <p className="mt-2 text-sm text-muted">Story drops, design releases, and product notes.</p>
+          <p className="mt-2 text-sm text-muted">Story drops, product releases, and useful notes.</p>
           <div className="mt-4">
             <NewsletterForm compact />
           </div>

@@ -20,7 +20,7 @@ export default function StorePage() {
         <StarfieldBackground className="opacity-80" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <Badge>Store</Badge>
-          <h1 className="mt-4 max-w-3xl font-display text-5xl font-semibold text-cosmic">Curated tools, product links, and design-led store collections.</h1>
+          <h1 className="mt-4 max-w-3xl font-display text-5xl font-semibold text-cosmic">Curated tools, product links, and store collections.</h1>
           <p className="mt-4 max-w-2xl text-muted">
             The Astra Parallax store brings together recommended tools, affiliate picks, print-on-demand collections, templates, and digital resources selected with care.
           </p>
@@ -28,7 +28,7 @@ export default function StorePage() {
             <Badge>Storefront</Badge>
             <h2 className="mt-4 font-display text-4xl font-bold text-cosmic">Recommended tools and product showcases.</h2>
             <p className="mt-3 max-w-2xl text-muted">
-              Store listings will focus on useful software, design resources, affiliate recommendations, and print-on-demand product directions.
+              Store listings will focus on useful software, creative resources, affiliate recommendations, and print-on-demand product directions.
             </p>
             {resources.length ? (
               <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">

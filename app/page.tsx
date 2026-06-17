@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Brush, Images, Instagram, PackageOpen, PenLine, Sparkles, Store } from "lucide-react";
+import { ArrowRight, BadgePercent, Instagram, PackageOpen, PenLine, Sparkles, Store } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 
@@ -13,25 +13,25 @@ const pillars = [
     icon: Instagram
   },
   {
-    href: "/design",
-    title: "Design",
-    eyebrow: "Artwork and studies",
-    description: "Finished art, poster directions, surface patterns, typography tests, and design experiments built for visual collections.",
-    icon: Brush
-  },
-  {
     href: "/studio",
     title: "Studio",
-    eyebrow: "POD and affiliate shop",
-    description: "Product showcases for Redbubble, print-on-demand collections, mockups, affiliate picks, and shop-ready releases.",
+    eyebrow: "Redbubble shop",
+    description: "Product showcases for Redbubble, print-on-demand collections, mockups, and shop-ready releases.",
     icon: Store
+  },
+  {
+    href: "/affiliate",
+    title: "Affiliate",
+    eyebrow: "Curated picks",
+    description: "Recommended creator tools, supplies, and resources collected separately from the Redbubble shop.",
+    icon: BadgePercent
   }
 ];
 
 const studioNotes = [
   { icon: PenLine, label: "Story-first content" },
-  { icon: Images, label: "Design-led collections" },
-  { icon: PackageOpen, label: "Print-on-demand products" }
+  { icon: PackageOpen, label: "Redbubble products" },
+  { icon: BadgePercent, label: "Affiliate picks" }
 ];
 
 export default function HomePage() {
@@ -46,13 +46,13 @@ export default function HomePage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-surface/80 px-4 py-2 text-sm font-semibold text-primary-soft shadow-sm">
               <Sparkles className="h-4 w-4" />
-              Create - Inspire - Design
+              Create - Inspire - Shop
             </div>
             <h1 className="mt-6 max-w-4xl font-display text-4xl font-extrabold leading-[1.04] text-metallic sm:text-5xl lg:text-7xl">
-              Astra Parallax is now a design and print-on-demand studio.
+              Astra Parallax is now a content and Redbubble studio.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-              A focused home for Instagram stories, original artwork, Redbubble products, and curated affiliate links. Three sections keep the experience simple: Content, Design, and Studio.
+              A focused home for Instagram stories, Redbubble products, and curated affiliate links. Three sections keep the experience simple: Content, Studio, and Affiliate.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
@@ -61,7 +61,7 @@ export default function HomePage() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="secondary">
-                <Link href="/design">Explore Design</Link>
+                <Link href="/affiliate">Affiliate Picks</Link>
               </Button>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">Three tabs</p>
-          <h2 className="mt-3 font-display text-3xl font-bold text-foreground sm:text-4xl">Everything points to publishing, portfolio, and product sales.</h2>
+          <h2 className="mt-3 font-display text-3xl font-bold text-foreground sm:text-4xl">Everything points to publishing, Redbubble products, and curated links.</h2>
         </div>
         <div className="mt-9 grid gap-5 md:grid-cols-3">
           {pillars.map((pillar) => {
@@ -118,11 +118,11 @@ export default function HomePage() {
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">Sales path</p>
             <h2 className="mt-3 font-display text-3xl font-bold text-foreground sm:text-4xl">From story idea to product page.</h2>
             <p className="mt-4 max-w-xl text-muted">
-              The site is shaped for a practical creative loop: publish visual stories, develop the strongest ideas into artwork, then showcase product-ready designs through POD and affiliate links.
+              The site is shaped for a practical creative loop: publish visual stories, send product-ready releases to Redbubble, and keep affiliate recommendations in their own space.
             </p>
           </div>
           <div className="grid gap-3">
-            {["Post stories and visual notes on Instagram", "Build artwork, patterns, and design collections", "Showcase Redbubble products and affiliate picks"].map((step, index) => (
+            {["Post stories and visual notes on Instagram", "Showcase Redbubble products in Studio", "Collect affiliate recommendations separately"].map((step, index) => (
               <div key={step} className="flex items-center gap-4 rounded-md border border-border bg-surface/86 p-4">
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-foreground text-sm font-bold text-background">{index + 1}</span>
                 <span className="font-medium text-foreground">{step}</span>
@@ -134,7 +134,7 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8">
         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary-soft">{siteConfig.name}</p>
-        <h2 className="mx-auto mt-3 max-w-3xl font-display text-3xl font-bold text-foreground sm:text-4xl">A warmer, simpler website for design-led selling.</h2>
+        <h2 className="mx-auto mt-3 max-w-3xl font-display text-3xl font-bold text-foreground sm:text-4xl">A warmer, simpler website for content and product discovery.</h2>
         <p className="mx-auto mt-4 max-w-2xl text-muted">{siteConfig.tagline}</p>
       </section>
     </>
