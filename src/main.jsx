@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { ArrowLeft, ArrowUpRight, Check, Copy, Share2, Sparkles } from 'lucide-react';
-import { platforms, getPlatform } from './linkData';
+import { ArrowLeft, ArrowUpRight, Check, Copy, Share2, ShoppingBasket, Sparkles } from 'lucide-react';
+import { platforms, getPlatform, amazonKitchenProducts } from './linkData';
 import './styles.css';
 
 function Brand({ compact = false }) {
@@ -109,7 +109,12 @@ function PlatformPage({ platform }) {
             </>
           );
           return link.active ? (
-            <a className="link-card" href={link.url} target="_blank" rel="sponsored noreferrer" key={link.title}>{content}</a>
+            <a
+              className="link-card"
+              href={link.url}
+              {...(link.internal ? {} : { target: '_blank', rel: 'sponsored noreferrer' })}
+              key={link.title}
+            >{content}</a>
           ) : (
             <div className="link-card link-card--disabled" key={link.title}>{content}</div>
           );
@@ -124,14 +129,72 @@ function PlatformPage({ platform }) {
   );
 }
 
+function KitchenFindsPage() {
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    document.title = 'Amazon Kitchen Finds - Astra Parallax';
+  }, []);
+
+  const sharePage = async () => {
+    const data = { title: 'Amazon Kitchen Finds - Astra Parallax', url: window.location.href };
+    if (navigator.share) return navigator.share(data).catch(() => {});
+    await navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1800);
+  };
+
+  return (
+    <main className="shell link-page collection-page" style={{ '--accent': '#f6c879', '--glow': '246, 200, 121' }}>
+      <nav className="detail-nav">
+        <a href="/pinterest" className="circle-button" aria-label="Back to Pinterest links"><ArrowLeft size={20} /></a>
+        <Brand compact />
+        <button className="circle-button" onClick={sharePage} aria-label="Share this collection">
+          {copied ? <Check size={19} /> : <Share2 size={19} />}
+        </button>
+      </nav>
+
+      <section className="collection-hero">
+        <img src="/images/products/amazon-kitchen-finds-cover.jpg" alt="A cozy collection of useful kitchen finds" />
+        <div className="collection-hero__shade" />
+        <div className="collection-hero__content">
+          <span className="collection-hero__icon"><ShoppingBasket size={23} /></span>
+          <p>CURATED COLLECTION</p>
+          <h1>Amazon Kitchen Finds</h1>
+          <span>Useful little upgrades for an easier, tidier kitchen.</span>
+        </div>
+      </section>
+
+      <div className="affiliate-note">As an Amazon Associate I earn from qualifying purchases.</div>
+
+      <section className="links" aria-label="Amazon kitchen products">
+        <div className="section-label"><span>{amazonKitchenProducts.length} handpicked finds</span><i /></div>
+        {amazonKitchenProducts.map((product) => (
+          <a className="link-card product-card" href={product.url} target="_blank" rel="sponsored noreferrer" key={product.url}>
+            <img className="link-card__image" src={product.image} alt={product.title} loading="lazy" />
+            <span><strong>{product.title}</strong><small>{product.note}</small></span>
+            <ArrowUpRight size={20} />
+          </a>
+        ))}
+      </section>
+
+      <button className="copy-button" onClick={sharePage}>
+        {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? 'Link copied' : 'Copy this collection'}
+      </button>
+      <footer>Made with curiosity <span>✦</span> Astra Parallax</footer>
+    </main>
+  );
+}
+
 function NotFound() {
   return <main className="shell not-found"><Brand /><h1>Lost among the stars?</h1><p>That page doesn’t exist yet.</p><a href="/">Return home</a></main>;
 }
 
 function App() {
-  const slug = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
-  if (!slug) return <Home />;
-  const platform = getPlatform(slug);
+  const path = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+  if (!path) return <Home />;
+  if (path === 'pinterest/amazon-kitchen-finds') return <KitchenFindsPage />;
+  const platform = getPlatform(path);
   return platform ? <PlatformPage platform={platform} /> : <NotFound />;
 }
 

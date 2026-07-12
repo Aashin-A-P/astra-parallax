@@ -80,6 +80,18 @@ a.link-card:hover { transform: translateY(-3px); border-color: rgba(var(--glow),
 .section-label i { height: 1px; background: rgba(255,255,255,.1); flex: 1; }
 .copy-button { margin: 22px auto 0; border: 0; background: transparent; color: rgba(255,255,255,.45); display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 11px; }
 .copy-button:hover { color: #fff; }
+.collection-page { width: min(720px, calc(100% - 34px)); }
+.collection-hero { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: 24px; box-shadow: 0 24px 60px rgba(3,5,18,.42); }
+.collection-hero > img { width: 100%; height: 100%; object-fit: cover; }
+.collection-hero__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,10,28,.05), rgba(7,10,28,.18) 42%, rgba(7,10,28,.93)); }
+.collection-hero__content { position: absolute; inset: auto 26px 25px; }
+.collection-hero__icon { width: 43px; height: 43px; display: grid; place-items: center; color: var(--accent); border: 1px solid rgba(var(--glow),.38); background: rgba(8,11,32,.7); backdrop-filter: blur(10px); border-radius: 13px; margin-bottom: 12px; }
+.collection-hero__content p { color: var(--accent); font-size: 9px; font-weight: 700; letter-spacing: .2em; margin: 0 0 7px; }
+.collection-hero__content h1 { font: 600 clamp(31px, 6vw, 48px)/1.05 'Playfair Display', serif; letter-spacing: -.025em; margin: 0 0 8px; }
+.collection-hero__content > span:last-child { color: rgba(255,255,255,.66); font-size: 12px; }
+.affiliate-note { margin: 15px 3px 3px; color: rgba(255,255,255,.4); text-align: center; font-size: 10px; line-height: 1.5; }
+.product-card { min-height: 84px; }
+.product-card .link-card__image { width: 58px; height: 58px; }
 .not-found { display: grid; place-content: center; text-align: center; gap: 20px; }
 .not-found h1 { font-size: clamp(40px, 8vw, 65px); margin-top: 35px; }
 .not-found p { color: rgba(255,255,255,.6); margin: 0; }
@@ -107,6 +119,9 @@ a.link-card:hover { transform: translateY(-3px); border-color: rgba(var(--glow),
   .platform-card h2 { font-size: 17px; }
   .platform-card p { display: none; }
   .link-page { width: min(100% - 24px, 670px); }
+  .collection-page { width: min(100% - 24px, 720px); }
+  .collection-hero { aspect-ratio: 4 / 5; border-radius: 19px; }
+  .collection-hero__content { inset: auto 18px 19px; }
   .profile { padding-top: 20px; }
   .profile__icon { width: 63px; height: 63px; }
   .link-card { padding: 11px 13px; grid-template-columns: 40px 1fr auto; gap: 11px; }
