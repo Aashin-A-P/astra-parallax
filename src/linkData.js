@@ -15,13 +15,7 @@ export const platforms = [
     accountUrl: 'https://www.instagram.com/astraparallax._.21/',
     accountLabel: 'Follow @astraparallax._.21',
     links: [
-      {
-        title: 'Fullstar 8-in-1 Vegetable Chopper',
-        note: 'Chop, slice, and prep faster - Amazon affiliate link',
-        image: '/images/products/fullstar-vegetable-chopper.jpg',
-        url: 'https://amzn.to/3TcAwna',
-        active: true
-      },
+      { title: 'Our favourite finds', note: 'Recommendations are coming soon', url: '#', active: false },
       { title: 'Creator essentials', note: 'Tools behind our stories', url: '#', active: false },
       { title: 'Cute gifts & collectibles', note: 'A curated collection', url: '#', active: false }
     ]
@@ -38,6 +32,13 @@ export const platforms = [
     accountUrl: 'https://in.pinterest.com/aashinap/',
     accountLabel: 'Explore Aashin A P on Pinterest',
     links: [
+      {
+        title: 'Fullstar 8-in-1 Vegetable Chopper',
+        note: 'Chop, slice, and prep faster - Amazon affiliate link',
+        image: '/images/products/fullstar-vegetable-chopper.jpg',
+        url: 'https://amzn.to/3TcAwna',
+        active: true
+      },
       { title: 'Dudu & Bubu collection', note: 'Stories, art, and cozy finds', url: '#', active: false },
       { title: 'Amazon kitchen finds', note: 'Useful things we discovered', url: '#', active: false },
       { title: 'Design inspiration', note: 'Creative resources and ideas', url: '#', active: false }
