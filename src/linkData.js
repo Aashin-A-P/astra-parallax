@@ -15,7 +15,13 @@ export const platforms = [
     accountUrl: 'https://www.instagram.com/astraparallax._.21/',
     accountLabel: 'Follow @astraparallax._.21',
     links: [
-      { title: 'Our favourite finds', note: 'Recommendations are coming soon', url: '#', active: false },
+      {
+        title: 'Fullstar 8-in-1 Vegetable Chopper',
+        note: 'Chop, slice, and prep faster - Amazon affiliate link',
+        image: '/images/products/fullstar-vegetable-chopper.jpg',
+        url: 'https://amzn.to/3TcAwna',
+        active: true
+      },
       { title: 'Creator essentials', note: 'Tools behind our stories', url: '#', active: false },
       { title: 'Cute gifts & collectibles', note: 'A curated collection', url: '#', active: false }
     ]

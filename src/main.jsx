@@ -99,7 +99,11 @@ function PlatformPage({ platform }) {
         {platform.links.map((link) => {
           const content = (
             <>
-              <span className="link-card__mini"><Sparkles size={18} /></span>
+              {link.image ? (
+                <img className="link-card__image" src={link.image} alt={link.title} loading="lazy" />
+              ) : (
+                <span className="link-card__mini"><Sparkles size={18} /></span>
+              )}
               <span><strong>{link.title}</strong><small>{link.note}</small></span>
               {link.active ? <ArrowUpRight size={20} /> : <span className="soon">SOON</span>}
             </>

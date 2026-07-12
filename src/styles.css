@@ -70,6 +70,7 @@ footer span { color: #e9bf80; margin: 0 8px; }
 a.link-card:hover { transform: translateY(-3px); border-color: rgba(var(--glow),.48); background: rgba(25,29,62,.84); }
 .link-card--primary { border-color: rgba(var(--glow),.36); background: linear-gradient(110deg, rgba(var(--glow),.15), rgba(12,16,42,.75)); }
 .link-card__mini { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 12px; background: rgba(var(--glow),.1); color: var(--accent); }
+.link-card__image { width: 52px; height: 52px; margin-left: -4px; border-radius: 11px; object-fit: cover; background: #fff; border: 1px solid rgba(255,255,255,.16); }
 .link-card strong, .link-card small { display: block; }
 .link-card strong { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
 .link-card small { color: rgba(255,255,255,.43); font-size: 11px; }
