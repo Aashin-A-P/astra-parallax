@@ -39,6 +39,48 @@ export const platforms = [
         url: 'https://amzn.to/3TcAwna',
         active: true
       },
+      {
+        title: 'CIRCLE JOY Rechargeable Milk Frother',
+        note: 'Dual-coil handheld frother - Amazon affiliate link',
+        image: '/images/products/circle-joy-milk-frother.jpg',
+        url: 'https://amzn.to/4p0DF5w',
+        active: true
+      },
+      {
+        title: 'TrendPlain 2-in-1 Glass Oil Sprayer',
+        note: 'Oil dispenser and cooking sprayer - Amazon affiliate link',
+        image: '/images/products/trendplain-oil-sprayer.jpg',
+        url: 'https://amzn.to/4gXOvao',
+        active: true
+      },
+      {
+        title: 'FEPPO 2-in-1 Mini Bag Sealer',
+        note: 'Portable heat sealer with cutter - Amazon affiliate link',
+        image: '/images/products/feppo-mini-bag-sealer.jpg',
+        url: 'https://amzn.to/4h6s7f2',
+        active: true
+      },
+      {
+        title: 'LAMU 2-Tier Lazy Susan Organizer',
+        note: 'Rotating spice and cabinet organizer - Amazon affiliate link',
+        image: '/images/products/lamu-lazy-susan-organizer.jpg',
+        url: 'https://amzn.to/3SPWoF2',
+        active: true
+      },
+      {
+        title: 'Vtopmart 24-Piece Food Storage Set',
+        note: 'Airtight pantry containers with labels - Amazon affiliate link',
+        image: '/images/products/vtopmart-food-storage-containers.jpg',
+        url: 'https://amzn.to/4vo3y0Q',
+        active: true
+      },
+      {
+        title: 'Cisily Kitchen Sink Caddy',
+        note: 'Stainless-steel sponge and brush holder - Amazon affiliate link',
+        image: '/images/products/cisily-sink-caddy.jpg',
+        url: 'https://amzn.to/44YsZeq',
+        active: true
+      },
       { title: 'Dudu & Bubu collection', note: 'Stories, art, and cozy finds', url: '#', active: false },
       { title: 'Amazon kitchen finds', note: 'Useful things we discovered', url: '#', active: false },
       { title: 'Design inspiration', note: 'Creative resources and ideas', url: '#', active: false }
