@@ -81,8 +81,8 @@ a.link-card:hover { transform: translateY(-3px); border-color: rgba(var(--glow),
 .copy-button { margin: 22px auto 0; border: 0; background: transparent; color: rgba(255,255,255,.45); display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 11px; }
 .copy-button:hover { color: #fff; }
 .collection-page { width: min(720px, calc(100% - 34px)); }
-.collection-hero { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: 24px; box-shadow: 0 24px 60px rgba(3,5,18,.42); }
-.collection-hero > img { width: 100%; height: 100%; object-fit: cover; }
+.collection-hero { position: relative; aspect-ratio: 1 / 1; overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: 24px; background: #0b1028; box-shadow: 0 24px 60px rgba(3,5,18,.42); }
+.collection-hero > img { width: 100%; height: 100%; object-fit: contain; }
 .collection-hero__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,10,28,.05), rgba(7,10,28,.18) 42%, rgba(7,10,28,.93)); }
 .collection-hero__content { position: absolute; inset: auto 26px 25px; }
 .collection-hero__icon { width: 43px; height: 43px; display: grid; place-items: center; color: var(--accent); border: 1px solid rgba(var(--glow),.38); background: rgba(8,11,32,.7); backdrop-filter: blur(10px); border-radius: 13px; margin-bottom: 12px; }
@@ -120,7 +120,7 @@ a.link-card:hover { transform: translateY(-3px); border-color: rgba(var(--glow),
   .platform-card p { display: none; }
   .link-page { width: min(100% - 24px, 670px); }
   .collection-page { width: min(100% - 24px, 720px); }
-  .collection-hero { aspect-ratio: 4 / 5; border-radius: 19px; }
+  .collection-hero { aspect-ratio: 1 / 1; border-radius: 19px; }
   .collection-hero__content { inset: auto 18px 19px; }
   .profile { padding-top: 20px; }
   .profile__icon { width: 63px; height: 63px; }
