@@ -32,6 +32,17 @@ export const platforms = [
     accountUrl: 'https://in.pinterest.com/aashinap/',
     accountLabel: 'Explore Aashin A P on Pinterest',
     links: [
+      {
+        kind: 'article',
+        badge: 'Small Kitchen Ideas',
+        title: '10 Kitchen Items That Make Small Kitchens Look Bigger',
+        note: 'Smart storage and organization finds that help free your counters, use overlooked spaces and make a compact kitchen feel calmer.',
+        cta: 'Explore All 10',
+        image: '/images/pinterest/small-kitchen-items-cover.webp',
+        url: '/pinterest/10-kitchen-items-that-make-small-kitchens-look-bigger',
+        internal: true,
+        active: true
+      },
       { title: 'Dudu & Bubu collection', note: 'Stories, art, and cozy finds', url: '#', active: false },
       { title: 'Design inspiration', note: 'Creative resources and ideas', url: '#', active: false }
     ]

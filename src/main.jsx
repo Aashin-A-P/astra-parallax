@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ArrowLeft, ArrowUpRight, Check, Copy, Share2, Sparkles } from 'lucide-react';
 import { platforms, getPlatform } from './linkData';
+import PinterestArticle from './PinterestArticle';
 import './styles.css';
 
 function Brand({ compact = false }) {
@@ -54,6 +55,22 @@ function Home() {
   );
 }
 
+function PinterestArticleCard({ link }) {
+  return (
+    <a className="pinterest-article-card" href={link.url}>
+      <div className="pinterest-article-card__image">
+        <img src={link.image} alt="An organized small kitchen with clear counters and vertical shelving" width="1600" height="1067" />
+      </div>
+      <div className="pinterest-article-card__content">
+        <span>{link.badge}</span>
+        <h2>{link.title}</h2>
+        <p>{link.note}</p>
+        <strong>{link.cta} <ArrowUpRight size={17} /></strong>
+      </div>
+    </a>
+  );
+}
+
 function PlatformPage({ platform }) {
   const [copied, setCopied] = useState(false);
   const Icon = platform.icon;
@@ -97,6 +114,7 @@ function PlatformPage({ platform }) {
         <div className="section-label"><span>Featured links</span><i /></div>
 
         {platform.links.map((link) => {
+          if (link.kind === 'article' && link.active) return <PinterestArticleCard link={link} key={link.title} />;
           const content = (
             <>
               {link.image ? (
@@ -136,6 +154,7 @@ function NotFound() {
 function App() {
   const path = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
   if (!path) return <Home />;
+  if (path === 'pinterest/10-kitchen-items-that-make-small-kitchens-look-bigger') return <PinterestArticle />;
   const platform = getPlatform(path);
   return platform ? <PlatformPage platform={platform} /> : <NotFound />;
 }
