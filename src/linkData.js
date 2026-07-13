@@ -1,57 +1,5 @@
 import { FaInstagram, FaYoutube, FaPinterestP, FaBloggerB } from 'react-icons/fa';
 
-export const amazonKitchenProducts = [
-  {
-    title: 'Fullstar 8-in-1 Vegetable Chopper',
-    note: 'Chop, slice, and prep faster - Amazon affiliate link',
-    image: '/images/products/fullstar-vegetable-chopper.jpg',
-    url: 'https://amzn.to/3TcAwna',
-    active: true
-  },
-  {
-    title: 'CIRCLE JOY Rechargeable Milk Frother',
-    note: 'Dual-coil handheld frother - Amazon affiliate link',
-    image: '/images/products/circle-joy-milk-frother.jpg',
-    url: 'https://amzn.to/4p0DF5w',
-    active: true
-  },
-  {
-    title: 'TrendPlain 2-in-1 Glass Oil Sprayer',
-    note: 'Oil dispenser and cooking sprayer - Amazon affiliate link',
-    image: '/images/products/trendplain-oil-sprayer.jpg',
-    url: 'https://amzn.to/4gXOvao',
-    active: true
-  },
-  {
-    title: 'FEPPO 2-in-1 Mini Bag Sealer',
-    note: 'Portable heat sealer with cutter - Amazon affiliate link',
-    image: '/images/products/feppo-mini-bag-sealer.jpg',
-    url: 'https://amzn.to/4h6s7f2',
-    active: true
-  },
-  {
-    title: 'LAMU 2-Tier Lazy Susan Organizer',
-    note: 'Rotating spice and cabinet organizer - Amazon affiliate link',
-    image: '/images/products/lamu-lazy-susan-organizer.jpg',
-    url: 'https://amzn.to/3SPWoF2',
-    active: true
-  },
-  {
-    title: 'Vtopmart 24-Piece Food Storage Set',
-    note: 'Airtight pantry containers with labels - Amazon affiliate link',
-    image: '/images/products/vtopmart-food-storage-containers.jpg',
-    url: 'https://amzn.to/4vo3y0Q',
-    active: true
-  },
-  {
-    title: 'Cisily Kitchen Sink Caddy',
-    note: 'Stainless-steel sponge and brush holder - Amazon affiliate link',
-    image: '/images/products/cisily-sink-caddy.jpg',
-    url: 'https://amzn.to/44YsZeq',
-    active: true
-  }
-];
-
 // This is the only file you need to edit when adding or changing links.
 // Set active: true and replace the # URL when an affiliate link is ready.
 export const platforms = [
@@ -84,14 +32,6 @@ export const platforms = [
     accountUrl: 'https://in.pinterest.com/aashinap/',
     accountLabel: 'Explore Aashin A P on Pinterest',
     links: [
-      {
-        title: 'Amazon Kitchen Finds',
-        note: '7 clever finds for an easier, tidier kitchen',
-        image: '/images/products/amazon-kitchen-finds-cover.jpg',
-        url: '/pinterest/amazon-kitchen-finds',
-        internal: true,
-        active: true
-      },
       { title: 'Dudu & Bubu collection', note: 'Stories, art, and cozy finds', url: '#', active: false },
       { title: 'Design inspiration', note: 'Creative resources and ideas', url: '#', active: false }
     ]
